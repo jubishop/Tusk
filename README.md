@@ -213,4 +213,4 @@ You're welcome to [join the server](https://discord.gg/2YSmnyX) where `TuskBot` 
 
 ## Bugs / Feedback
 
-Feel free to hit me up in my [discord channel](https://discord.gg/2YSmnyX), I'm `@jubi`.
+Feel free to file issues on [github](https://github.com/jubishop/Tusk/issues) or to hit me up in my [discord channel](https://discord.gg/2YSmnyX), I'm `@jubi`.
