@@ -13,7 +13,7 @@ class RLBot
   include Singleton
 
   ##### PRIVATE CONSTANTS #####
-  PLATFORMS = %i[steam xbox ps].freeze
+  PLATFORMS = %i[steam xbox ps epic].freeze
   private_constant :PLATFORMS
   #############################
 
@@ -196,7 +196,8 @@ class RLBot
     return RLUtils.link(member, {
       steam: 'https://rlstats.net/profile/Steam/',
       xbox: 'https://rlstats.net/profile/Xbox/',
-      ps: 'https://rlstats.net/profile/PS4/'
+      ps: 'https://rlstats.net/profile/PS4/',
+      epic: 'https://rlstats.net/profile/Epic/'
     })
   end
 
@@ -204,7 +205,8 @@ class RLBot
     return RLUtils.link(member, {
       steam: 'http://rocketleague.tracker.network/profile/steam/',
       xbox: 'https://rocketleague.tracker.network/profile/xbox/',
-      ps: 'https://rocketleague.tracker.network/profile/ps/'
+      ps: 'https://rocketleague.tracker.network/profile/ps/',
+      epic: 'https://rocketleague.tracker.network/profile/epic/'
     })
   end
 end
