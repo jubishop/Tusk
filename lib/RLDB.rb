@@ -229,7 +229,8 @@ class RLDB
     platform_map = {
       ps4: 'ps',
       xbox: 'xbox',
-      steam: 'steam'
+      steam: 'steam',
+      epic: 'epic'
     }.freeze
     valid_player = lambda { |player|
       return player.id.id && platform_map.key?(player.id.platform.to_sym)
