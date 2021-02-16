@@ -84,6 +84,7 @@ If you are the server's owner (or you're whitelisted), you can register people o
 - ***Steam Example***: `!admin_register @jubi jubishop`
 - ***PS Example***: `!admin_register @jubi jubishop ps`
 - ***XBox Example***: `!admin_register @jubi jubishop xbox`
+- ***Epic Example***: `!admin_register @jubi jubishop epic`
 
 ### Role Assignments
 
