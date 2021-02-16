@@ -56,19 +56,25 @@ Most commands won't work unless you have registered your Rocket League account f
     - On the desktop version of Steam, you can find this link by right-clicking anywhere in the empty space of your profile and selecting `Copy Page Url`.  Then simply paste it into the address bar of your browser.
   - **`[platform]`**:  This defaults to steam, so you can omit it.
   - ***Example***: In this case, the player could register with: `!register 76561198257073170` or: `!register jubishop`.
-
-- **Playstation**:
-  - **`<account-id>`**:  This is your PSN.
-  - **`[platform]`**: This should be `ps`.
-  - ***Example***: If your PSN is `jubishop`, you'd register with: `!register jubishop ps`
-  - If your PSN contains spaces, wrap it in quotes: `!register "My Name" ps`
-
+  
 - **XBox**:
   - **`<account-id>`**:  This is your Gamertag.
   - **`[platform]`**: This should be `xbox`.
   - ***Example***: If your Gamertag is `jubishop`, you'd register with: `!register jubishop xbox`
   - If your Gamertag contains spaces, wrap it in quotes: `!register "My Name" xbox`
 
+- **Playstation**:
+  - **`<account-id>`**:  This is your PSN.
+  - **`[platform]`**: This should be `ps`.
+  - ***Example***: If your PSN is `jubishop`, you'd register with: `!register jubishop ps`
+  - If your PSN contains spaces, wrap it in quotes: `!register "My Name" ps`
+  
+- **Epic**:
+  - **`<account-id>`**:  This is your Epic name.
+  - **`[platform]`**: This should be `epic`.
+  - ***Example***: If your Epic name is `jubishop`, you'd register with: `!register jubishop epic`
+  - If your Epic name contains spaces, wrap it in quotes: `!register "My Name" epic`
+  
 - **Switch**:  Sorry, Switch is not yet supported.
 
 #### Registering others
@@ -76,8 +82,9 @@ Most commands won't work unless you have registered your Rocket League account f
 If you are the server's owner (or you're whitelisted), you can register people other than yourself.  The command is `!admin_register`, and the first param becomes the discord user to register.
 
 - ***Steam Example***: `!admin_register @jubi jubishop`
-- ***PS Example***: `!admin_register @jubi jubishop ps`
 - ***XBox Example***: `!admin_register @jubi jubishop xbox`
+- ***PS Example***: `!admin_register @jubi jubishop ps`
+- ***Epic Example***: `!admin_register @jubi jubishop epic`
 
 ### Role Assignments
 
