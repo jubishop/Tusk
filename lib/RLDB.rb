@@ -229,7 +229,7 @@ class RLDB
     platform_map = {
       steam: 'steam'
       xbox: 'xbox',
-      ps4: 'ps',
+      ps: 'ps',
       epic: 'epic'
     }.freeze
     valid_player = lambda { |player|
