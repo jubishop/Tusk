@@ -75,10 +75,6 @@
     "description": "Print link to user's steam profile.",
     "usage": "[user]"
   },
-  "rlstats": {
-    "description": "Print link to user's rlstats profile.",
-    "usage": "[user]"
-  },
   "tracker": {
     "description": "Print link to user's rltracker profile.",
     "usage": "[user]"

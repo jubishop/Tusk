@@ -151,10 +151,6 @@ jubi.command(:steam, num_args: (0..1)) { |event, name|
   return jubi.member(event, name)
 }
 
-jubi.command(:rlstats, num_args: (0..1)) { |event, name|
-  return jubi.member(event, name)
-}
-
 jubi.command(:tracker, aliases: [:rltracker], num_args: (0..1)) { |event, name|
   return jubi.member(event, name)
 }

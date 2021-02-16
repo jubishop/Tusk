@@ -192,14 +192,6 @@ class RLBot
     })
   end
 
-  def rlstats(member)
-    return RLUtils.link(member, {
-      steam: 'https://rlstats.net/profile/Steam/',
-      xbox: 'https://rlstats.net/profile/Xbox/',
-      ps: 'https://rlstats.net/profile/PS4/'
-    })
-  end
-
   def tracker(member)
     return RLUtils.link(member, {
       steam: 'http://rocketleague.tracker.network/profile/steam/',
