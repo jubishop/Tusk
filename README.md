@@ -69,6 +69,12 @@ Most commands won't work unless you have registered your Rocket League account f
   - ***Example***: If your Gamertag is `jubishop`, you'd register with: `!register jubishop xbox`
   - If your Gamertag contains spaces, wrap it in quotes: `!register "My Name" xbox`
   
+- **XBox**:
+  - **`<account-id>`**:  This is your Gamertag.
+  - **`[platform]`**: This should be `xbox`.
+  - ***Example***: If your Gamertag is `jubishop`, you'd register with: `!register jubishop xbox`
+  - If your Gamertag contains spaces, wrap it in quotes: `!register "My Name" xbox`
+  
  - **Epic**:
   - **`<account-id>`**:  This is your Epic accout name.
   - **`[platform]`**: This should be `epic`.
