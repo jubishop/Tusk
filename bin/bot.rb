@@ -121,10 +121,6 @@ jubi.command(:ranks, aliases: [:rank], num_args: (0..1)) { |event, name|
 #####################################
 # STATS
 #####################################
-jubi.command(:stats, aliases: [:stat], num_args: (0..6)) { |event, *names|
-  return jubi, jubi.members(event, names), event.channel
-}
-
 jubi.command(:series, num_args: (0..6)) { |event, *names|
   return jubi, event.author, jubi.members(event, names), event.channel
 }

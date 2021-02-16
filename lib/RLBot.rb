@@ -6,7 +6,6 @@ require 'core'
 require_relative 'RLDB'
 require_relative 'RLRanks'
 require_relative 'RLSeries'
-require_relative 'RLStats'
 require_relative 'RLUtils'
 
 class RLBot
@@ -149,12 +148,8 @@ class RLBot
   end
 
   #####################################
-  # STATS / SERIES
+  # SERIES
   #####################################
-  def stats(jubi, members, channel)
-    return RLStats.stats(jubi, members, channel)
-  end
-
   def series(jubi, uploader, members, channel)
     return RLSeries.series(jubi, uploader, members, channel)
   end

@@ -56,7 +56,7 @@ Most commands won't work unless you have registered your Rocket League account f
     - On the desktop version of Steam, you can find this link by right-clicking anywhere in the empty space of your profile and selecting `Copy Page Url`.  Then simply paste it into the address bar of your browser.
   - **`[platform]`**:  This defaults to steam, so you can omit it.
   - ***Example***: In this case, the player could register with: `!register 76561198257073170` or: `!register jubishop`.
-  
+
 - **XBox**:
   - **`<account-id>`**:  This is your Gamertag.
   - **`[platform]`**: This should be `xbox`.
@@ -68,13 +68,13 @@ Most commands won't work unless you have registered your Rocket League account f
   - **`[platform]`**: This should be `ps`.
   - ***Example***: If your PSN is `jubishop`, you'd register with: `!register jubishop ps`
   - If your PSN contains spaces, wrap it in quotes: `!register "My Name" ps`
-  
+
 - **Epic**:
   - **`<account-id>`**:  This is your Epic name.
   - **`[platform]`**: This should be `epic`.
   - ***Example***: If your Epic name is `jubishop`, you'd register with: `!register jubishop epic`
   - If your Epic name contains spaces, wrap it in quotes: `!register "My Name" epic`
-  
+
 - **Switch**:  Sorry, Switch is not yet supported.
 
 #### Registering others
@@ -132,27 +132,7 @@ Server owners (or whitelisted users) can also update the role of every registere
 
 ## Stats
 
-There are 3 commands for getting stats in various ways.
-
-### Lifetime Stats
-
-You can fetch lifetime stats, across all game-modes and playlists, with:
-
-```shell
-!stats [member1] [member2] [member3] ...
-```
-
-![Image of Stats](./images/stats.png)
-
-- You can click the :arrow_left: and :arrow_right: buttons to flip between the different pages of statistics.
-- To fetch your own stats, simply type `!stats`
-- If you provide a list of players it will display a table so their stats can be easily compared side by side.  You can fetch up to 6 players at a time.
-- This data is gathered from [calculated.gg](https://calculated.gg/).
-- The image above was generated with the command:
-
-```shell
-!stats @jubi @Zoynx @Jetpoof @Piaka @Tombst0ne @FezDispenser
-```
+There are 2 commands for getting stats in various ways.
 
 ### Series Stats
 

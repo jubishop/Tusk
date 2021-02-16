@@ -25,15 +25,6 @@
   //######################################
   // STATS
   //######################################
-  "stats": {
-    "description": "Display average stats per game",
-    "usage": "[user1] [user2] [user3] ...",
-    "arg_notes": [
-      "Only works for accounts on the steam platform",
-      "If no `user` is provided, it will display only your stats.",
-      "Will show stats for up to 6 `user`s."
-    ]
-  },
   "series": {
     "description": "Display average stats over the last 36 hours for games with given players",
     "usage": "[user] [user2] [user3] ...",
