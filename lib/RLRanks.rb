@@ -81,9 +81,9 @@ class RLRanks
   private_class_method :fetch_ranks
 
   RLT_PLATFORM_MAP = {
+    steam: :steam,
     xbox: :xbl,
     ps: :psn,
-    steam: :steam,
     epic: :epic
   }.freeze
   private_constant :RLT_PLATFORM_MAP
