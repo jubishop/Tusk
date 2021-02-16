@@ -227,7 +227,7 @@ class RLDB
     return if replays.empty?
 
     platform_map = {
-      steam: 'steam'
+      steam: 'steam',
       xbox: 'xbox',
       ps: 'ps',
       epic: 'epic'
