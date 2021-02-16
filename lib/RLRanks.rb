@@ -83,7 +83,8 @@ class RLRanks
   RLT_PLATFORM_MAP = {
     xbox: :xbl,
     ps4: :psn,
-    steam: :steam
+    steam: :steam,
+    epic: :epic
   }.freeze
   private_constant :RLT_PLATFORM_MAP
 
