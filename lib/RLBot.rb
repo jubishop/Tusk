@@ -196,7 +196,8 @@ class RLBot
     return RLUtils.link(member, {
       steam: 'http://rocketleague.tracker.network/profile/steam/',
       xbox: 'https://rocketleague.tracker.network/profile/xbl/',
-      ps: 'https://rocketleague.tracker.network/profile/psn/'
+      ps: 'https://rocketleague.tracker.network/profile/psn/',
+      epic:'https://rocketleague.tracker.network/profile/epic/'
     })
   end
 end
