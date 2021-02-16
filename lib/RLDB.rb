@@ -227,9 +227,10 @@ class RLDB
     return if replays.empty?
 
     platform_map = {
-      ps4: 'ps',
-      xbox: 'xbox',
       steam: 'steam'
+      xbox: 'xbox',
+      ps4: 'ps',
+      epic: 'epic'
     }.freeze
     valid_player = lambda { |player|
       return player.id.id && platform_map.key?(player.id.platform.to_sym)
