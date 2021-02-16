@@ -7,7 +7,7 @@
     "usage": "<account-id> [platform]",
     "arg_notes": [
       "`account-id` may be a string or number, depending on platform.",
-      "`platform` must be one of `ps|xbox|steam`.  Defaults to `steam`."
+      "`platform` must be one of `steam|xbox|ps|epic`.  Defaults to `steam`."
     ]
   },
   "unregister": {
