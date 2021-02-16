@@ -6,7 +6,7 @@ db = PG.connect(dbname: ARGV.first)
 
 # Create platform enum. (switch not supported atm)
 db.exec(<<~SQL)
-  create type platform as ENUM ('steam', 'xbox', 'ps', 'switch')
+  create type platform as ENUM ('steam', 'xbl', 'psn', 'epic', 'switch')
 SQL
 
 # Create users table.
