@@ -79,7 +79,7 @@ Most commands won't work unless you have registered your Rocket League account f
 
 #### Registering others
 
-If you are the server's owner (or you're whitelisted), you can register people other than yourself.  The command is `!admin_register`, and the first param becomes the discord user to register.
+If you are the server's owner (or you have the role `tusk_admin`), you can register people other than yourself.  The command is `!admin_register`, and the first param becomes the discord user to register.
 
 - ***Steam Example***: `!admin_register @jubi jubishop`
 - ***XBox Example***: `!admin_register @jubi jubishop xbox`
@@ -90,7 +90,7 @@ If you are the server's owner (or you're whitelisted), you can register people o
 
 #### Defining which playlists affect roles
 
-By default, all playlists are considered when assigning roles. Server owners (or whitelisted users) can narrow this selection to any set of playlists they prefer using `!role_playlists`.  Playlist names are identified as:
+By default, all playlists are considered when assigning roles. Server owners (or users with the role `tusk_admin`) can narrow this selection to any set of playlists they prefer using `!role_playlists`.  Playlist names are identified as:
 
 - `standard`
 - `doubles`
@@ -113,7 +113,7 @@ If you want to go back to the default, run `!clear_role_playlists`.
 
 #### Updating all roles
 
-Server owners (or whitelisted users) can also update the role of every registered user in the channel with `!update_all_roles`.
+Server owners (or users with the role `tusk_admin`) can also update the role of every registered user in the channel with `!update_all_roles`.
 
 ## Ranks
 
