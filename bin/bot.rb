@@ -78,7 +78,6 @@ jubi.command(:command_prefix) { |event|
 
 jubi.command(:set_command_prefix,
              num_args: 1,
-             whitelist: JubiBot::JUBI,
              owners: 'tusk_admin') { |event, prefix|
   return event.server, prefix
 }
