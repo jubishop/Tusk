@@ -16,12 +16,6 @@ jubi = JubiBot.new(
     error_message: 'Something went wrong.  Mind joining ' \
       'https://discord.gg/2YSmnyX and telling `jubi` about it?')
 
-WHITELIST = Set[
-  JubiBot::JUBI,
-  256991987163463680, # @Lack
-  107307158609137664  # @Dukenator76
-].freeze
-
 #######################################
 # MANAGEMENT
 #######################################
@@ -32,8 +26,7 @@ jubi.command(:user_info, num_args: (0..1)) { |event, name|
 jubi.command(
     :admin_register,
     num_args: (2..3),
-    whitelist: WHITELIST,
-    owners: true) { |event, name, account_id, platform = :steam|
+    owners: 'tusk_admin') { |event, name, account_id, platform = :steam|
   platform = platform.to_sym
   RLBot.validate_platform(platform)
 
@@ -42,8 +35,7 @@ jubi.command(
 
 jubi.command(:admin_unregister,
              num_args: 1,
-             whitelist: WHITELIST,
-             owners: true) { |event, name|
+             owners: 'tusk_admin') { |event, name|
   return jubi.member(event, name)
 }
 
@@ -67,18 +59,16 @@ jubi.command(:watching,
 
 jubi.command(:role_playlists,
              num_args: (0..1),
-             whitelist: WHITELIST,
-             owners: true) { |event, playlists = ''|
+             owners: 'tusk_admin') { |event, playlists = ''|
   return event.server, playlists.split('|')
 }
 
 jubi.command(:clear_role_playlists,
-             whitelist: WHITELIST,
-             owners: true) { |event|
+             owners: 'tusk_admin') { |event|
   return event.server
 }
 
-jubi.command(:update_all_roles, whitelist: WHITELIST, owners: true) { |event|
+jubi.command(:update_all_roles, owners: 'tusk_admin') { |event|
   return event
 }
 
@@ -89,7 +79,7 @@ jubi.command(:command_prefix) { |event|
 jubi.command(:set_command_prefix,
              num_args: 1,
              whitelist: JubiBot::JUBI,
-             owners: true) { |event, prefix|
+             owners: 'tusk_admin') { |event, prefix|
   return event.server, prefix
 }
 
