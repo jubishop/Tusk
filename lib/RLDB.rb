@@ -137,6 +137,8 @@ class RLDB
   end
 
   def server_prefix(server)
+    return '!' unless server
+
     server_info = _server_info(server)
     return '!' unless server_info
 

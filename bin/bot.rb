@@ -9,7 +9,7 @@ Discordrb::LOGGER.streams = [$stdout, File.open('log', 'w')]
 jubi = JubiBot.new(
     token: ENV['DISCORD_TOKEN'],
     command_bot: RLBot.instance,
-    prefix: proc { |event| return RLDB.server_prefix(event.server.id) },
+    prefix: proc { |event| return RLDB.server_prefix(event&.server&.id) },
     doc_file: File.expand_path('../documentation/commands.json', __dir__),
     homepage: 'https://jubishop.com/Tusk/',
     permissions: 268848192,
