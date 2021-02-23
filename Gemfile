@@ -1,10 +1,10 @@
-ruby '>= 2.7.1'
+ruby '>= 3'
 
 source 'https://rubygems.org'
 
 gem 'concurrent-ruby', require: 'concurrent'
 gem 'csv'
-gem 'discordrb', github: 'swarley/discordrb', branch: 'next'
+gem 'discordrb'
 gem 'http'
 gem 'pg'
 

@@ -88,6 +88,7 @@ class RLRanks
   }.freeze
   private_constant :RLT_PLATFORM_MAP
 
+  # rubocop:disable Lint/SymbolConversion
   RLT_RANK_MAP = {
     'Ranked Duel 1v1': :duel,
     'Ranked Doubles 2v2': :doubles,
@@ -100,6 +101,7 @@ class RLRanks
     'Tournament Matches': :tournament
   }.freeze
   private_constant :RLT_RANK_MAP
+  # rubocop:enable Lint/SymbolConversion
 
   def self.rltracker(user)
     base_url = 'https://rocketleague.tracker.network/rocket-league/profile'

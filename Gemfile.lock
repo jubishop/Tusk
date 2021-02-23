@@ -43,7 +43,7 @@ GIT
 
 GIT
   remote: https://github.com/jubishop/jubibot.git
-  revision: 1a71254fd52762e8dc42f7dba7f729e4d8d7370f
+  revision: b103f372ec3229c0d3974cd1d11a8a323555e130
   specs:
     jubibot (1.0)
       core
@@ -75,20 +75,6 @@ GIT
       duration
       http
 
-GIT
-  remote: https://github.com/swarley/discordrb.git
-  revision: eb693934d6b4806ed86f283f987246d528c95566
-  branch: next
-  specs:
-    discordrb (3.3.0)
-      discordrb-webhooks (~> 3.3.0)
-      ffi (>= 1.9.24)
-      opus-ruby
-      rest-client (>= 2.0.0)
-      websocket-client-simple (>= 0.3.0)
-    discordrb-webhooks (3.3.0)
-      rest-client (>= 2.0.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -96,6 +82,14 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     concurrent-ruby (1.1.8)
     csv (3.1.9)
+    discordrb (3.4.0)
+      discordrb-webhooks (~> 3.3.0)
+      ffi (>= 1.9.24)
+      opus-ruby
+      rest-client (>= 2.0.0)
+      websocket-client-simple (>= 0.3.0)
+    discordrb-webhooks (3.3.0)
+      rest-client (>= 2.1.0.rc1)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     event_emitter (0.2.6)
@@ -147,7 +141,7 @@ DEPENDENCIES
   core!
   csv
   datacache!
-  discordrb!
+  discordrb
   duration!
   http
   jubibot!

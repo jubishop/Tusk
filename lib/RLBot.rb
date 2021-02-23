@@ -192,7 +192,7 @@ class RLBot
       steam: 'http://rocketleague.tracker.network/rocket-league/profile/steam/',
       xbox: 'https://rocketleague.tracker.network/rocket-league/profile/xbl/',
       ps: 'https://rocketleague.tracker.network/rocket-league/profile/psn/',
-      epic:'https://rocketleague.tracker.network/rocket-league/profile/epic/'
+      epic: 'https://rocketleague.tracker.network/rocket-league/profile/epic/'
     })
   end
 end

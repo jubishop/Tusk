@@ -13,8 +13,9 @@ jubi = JubiBot.new(
     doc_file: File.expand_path('../documentation/commands.json', __dir__),
     homepage: 'https://jubishop.com/Tusk/',
     permissions: 268848192,
-    error_message: 'Something went wrong.  Mind joining ' \
-      'https://discord.gg/2YSmnyX and telling `jubi` about it?')
+    error_message: 'Something went wrong.  Would you file an issue at ' \
+      'https://github.com/jubishop/Tusk/issues or join ' \
+      'https://discord.gg/2YSmnyX and tell `jubi` about it?')
 
 #######################################
 # MANAGEMENT

@@ -13,6 +13,7 @@ class RLSeries
   NUM_THREADS = 4
   private_constant :NUM_THREADS
 
+  # rubocop:disable Naming/VariableNumber
   SERIES_MAP = {
     Core: {
       wins: 'Wins',
@@ -65,6 +66,7 @@ class RLSeries
     }
   }.freeze
   private_constant :SERIES_MAP
+  # rubocop:enable Naming/VariableNumber
 
   TEAM_GROUPS = [%i[orange blue], %i[blue orange]].freeze
   private_constant :TEAM_GROUPS
@@ -179,7 +181,7 @@ class RLSeries
     description = '```'
     description << "\n"
     description << members.first.display_name[0, 5].rjust(rjust + 8)
-    members[1..].each { |member|
+    members.drop(1).each { |member|
       description << member.display_name[0, 5].rjust(7)
     }
     description << "\n"
@@ -223,11 +225,13 @@ class RLSeries
   # Fetches summaries of all games from uploader with all users playing.
   def fetch_summaries(db_uploader, db_users, duration)
     summaries = try_api(db_uploader.server) { |api|
+      # rubocop:disable Lint/SymbolConversion
       api.replays('uploader': db_uploader.account,
                   'replay-date-after': (DateTime.now - duration).rfc3339,
                   'sort-by': 'replay-date',
                   'sort-dir': 'asc',
                   'count': 200)
+      # rubocop:enable Lint/SymbolConversion
     }
 
     return summaries.select { |summary|
