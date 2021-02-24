@@ -92,7 +92,6 @@ class RLRanks
   RLT_RANK_MAP = {
     'Ranked Duel 1v1': :duel,
     'Ranked Doubles 2v2': :doubles,
-    'Ranked Solo Standard 3v3': :solo_standard,
     'Ranked Standard 3v3': :standard,
     'Hoops': :hoops,
     'Rumble': :rumble,

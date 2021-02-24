@@ -95,16 +95,16 @@ By default, all playlists are considered when assigning roles. Server owners (or
 - `standard`
 - `doubles`
 - `duel`
-- `solo_standard`
 - `rumble`
 - `dropshot`
 - `hoops`
 - `snow_day`
+- `tournament`
 
-Join the playlists you care about with a `|` between each one.  For example, if you want to only assign roles based on the ranks in the `doubles`, `standard`, and `solo_standard` playlists:
+Join the playlists you care about with a `|` between each one.  For example, if you want to only assign roles based on the ranks in the `doubles`, `standard`, and `tournament` playlists:
 
 ```shell
-!role_playlists doubles|standard|solo_standard
+!role_playlists doubles|standard|tournament
 ```
 
 If you run `!role_playlists` with no parameters, it'll show you what playlists are currently being used.

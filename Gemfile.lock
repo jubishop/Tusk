@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/jubishop/calculated.git
-  revision: 6a4aec4752e52580081eae83d061f6faeec3751e
+  revision: 2a9dd730c0dbc9c9c22b26d6e3ad5e6e68d16369
   specs:
     calculated (1.0)
       core
@@ -53,7 +53,7 @@ GIT
 
 GIT
   remote: https://github.com/jubishop/rlranks.git
-  revision: e49ef0afdbb16556519a0a29eef61ca705fe8545
+  revision: 1d7335ce52fb338029eaf1a746d3fc228a313caa
   specs:
     rlranks (1.0)
       rstruct

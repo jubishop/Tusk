@@ -29,11 +29,11 @@ db.exec(<<~SQL)
     standard smallint,
     doubles smallint,
     duel smallint,
-    solo_standard smallint,
     rumble smallint,
     dropshot smallint,
     hoops smallint,
     snow_day smallint,
+    tournament smallint,
     primary key (id, account, platform)
   )
 SQL

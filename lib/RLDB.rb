@@ -17,11 +17,11 @@ class RLDB
     standard
     doubles
     duel
-    solo_standard
     rumble
     dropshot
     hoops
     snow_day
+    tournament
   ].freeze
   public_constant :PLAYLIST_COLUMNS
   #############################
