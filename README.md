@@ -86,11 +86,11 @@ If you are the server's owner (or you have the role `tusk_admin`), you can regis
 - ***PS Example***: `!admin_register @jubi jubishop ps`
 - ***Epic Example***: `!admin_register @jubi jubishop epic`
 
-### Role Assignments
+### Playlists
 
-#### Defining which playlists affect roles
+#### Defining which playlists affect roles and ranks
 
-By default, all playlists are considered when assigning roles. Server owners (or users with the role `tusk_admin`) can narrow this selection to any set of playlists they prefer using `!role_playlists`.  Playlist names are identified as:
+By default, all playlists are considered when assigning roles or best rank. Server owners (or users with the role `tusk_admin`) can narrow this selection to any set of playlists they prefer using `!playlists`.  Playlist names are identified as:
 
 - `standard`
 - `doubles`
@@ -104,12 +104,14 @@ By default, all playlists are considered when assigning roles. Server owners (or
 Join the playlists you care about with a `|` between each one.  For example, if you want to only assign roles based on the ranks in the `doubles`, `standard`, and `tournament` playlists:
 
 ```shell
-!role_playlists doubles|standard|tournament
+!playlists doubles|standard|tournament
 ```
 
-If you run `!role_playlists` with no parameters, it'll show you what playlists are currently being used.
+If you run `!playlists` with no parameters, it'll show you what playlists are currently being used.
 
-If you want to go back to the default, run `!clear_role_playlists`.
+If you want to go back to the default, run `!clear_playlists`.
+
+### Role Assignments
 
 #### Updating all roles
 

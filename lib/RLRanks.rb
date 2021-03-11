@@ -23,6 +23,9 @@ class RLRanks
     RLDB.store_ranks(ranks)
     return "#{member.display_name} isn't ranked in anything." if ranks.unranked?
 
+    playlists = RLDB.server_playlists(member.server.id)
+    best_rank = ranks.best(playlists)
+
     event.channel.send_embed { |embed|
       embed.title = "**#{member.display_name}**'s Ranks"
       embed.timestamp = Time.now
@@ -39,11 +42,11 @@ class RLRanks
       DESCRIPTION
 
       embed.thumbnail = Discordrb::Webhooks::EmbedThumbnail.new(
-          url: RLUtils.rank_url(ranks.best))
+          url: RLUtils.rank_url(best_rank))
 
       embed.footer = Discordrb::Webhooks::EmbedFooter.new(
-          text: ranks.best.playlist,
-          icon_url: RLUtils.rank_url(ranks.best))
+          text: best_rank.playlist,
+          icon_url: RLUtils.rank_url(best_rank))
 
       if db_user.platform == :steam
         player_summary = Steam::API.new.player_summary(db_user.account)

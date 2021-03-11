@@ -58,13 +58,13 @@ jubi.command(:watching,
   return event.bot, show
 }
 
-jubi.command(:role_playlists,
+jubi.command(:playlists,
              num_args: (0..1),
              owners: 'tusk_admin') { |event, playlists = ''|
   return event.server, playlists.split('|')
 }
 
-jubi.command(:clear_role_playlists,
+jubi.command(:clear_playlists,
              owners: 'tusk_admin') { |event|
   return event.server
 }

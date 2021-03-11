@@ -67,13 +67,13 @@ class RLBot
     return 'Great show.'
   end
 
-  def clear_role_playlists(server)
+  def clear_playlists(server)
     RLDB.store_server_playlists(server.id, [])
     return "#{server.name} role playlists cleared back to default: " \
            "#{RLDB::PLAYLIST_COLUMNS.sentence { |pl| "`#{pl}`" }}."
   end
 
-  def role_playlists(server, playlists)
+  def playlists(server, playlists)
     if playlists.empty?
       playlists = RLDB.server_playlists(server.id)
       playlists = RLDB::PLAYLIST_COLUMNS if playlists.empty?
