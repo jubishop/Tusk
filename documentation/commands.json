@@ -4,10 +4,11 @@
   //######################################
   "register": {
     "description": "Register your Rocket League user account.",
-    "usage": "<account-id> [platform]",
+    "usage": "<account-id> <platform> [region]",
     "arg_notes": [
       "`account-id` may be a string or number, depending on platform.",
-      "`platform` must be one of `steam|xbox|ps|epic`."
+      "`platform` must be one of `steam|xbox|ps|epic`.",
+      "`region` (optional) `JPN|ASC|ASM|ME|OCE|SAF|EU|USE|USW|SAM`"
     ]
   },
   "unregister": {

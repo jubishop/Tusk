@@ -5,6 +5,7 @@ require 'core'
 
 require_relative 'RLDB'
 require_relative 'RLRanks'
+require_relative 'RLRegions'
 require_relative 'RLSeries'
 require_relative 'RLUtils'
 
@@ -20,8 +21,15 @@ class RLBot
   def self.validate_platform(platform)
     return if PLATFORMS.include?(platform)
 
-    platform_list = PLATFORMS.sentence('or') { |elem| "`#{elem}`" }
+    platform_list = PLATFORMS.sentence('or') { |e| "`#{e}`" }
     raise InvalidParam, "`platform` must be one of #{platform_list}."
+  end
+
+  def self.validate_region(region)
+    return if RLRegions::REGION_ROLES.include?(region)
+
+    region_list = RLRegions::REGION_ROLES.to_a.sentence('or') { |e| "`#{e}`" }
+    raise InvalidParam, "`region` must be one of #{region_list}."
   end
   #########################
 
@@ -44,8 +52,8 @@ class RLBot
     USER
   end
 
-  def admin_register(member, orig_account, platform, event)
-    return register(member, orig_account, platform, event)
+  def admin_register(member, orig_account, platform, region, event)
+    return register(member, orig_account, platform, region, event)
   end
 
   def admin_unregister(member)
@@ -113,7 +121,7 @@ class RLBot
   #######################################
   # USER REGISTRATION MANAGEMENT
   #######################################
-  def register(member, orig_account, platform, event)
+  def register(member, orig_account, platform, region, event)
     event.channel.send_message("Now registering: **#{member.display_name}**...")
     begin
       account = if platform == :steam
@@ -131,20 +139,22 @@ class RLBot
     event.channel.send_message(
         "**#{member.display_name}** successfully registered.")
 
-    ranks(member, event, db_user)
+    RLRegions.update_nick(member, region)
+    ranks(member, event, db_user, region)
   end
 
   def unregister(member)
     RLDB.unregister(member.id, member.server.id)
-    RLRoles.remove_role(member)
+    RLRegions.remove_nick(member)
+    RLRoles.remove_roles(member)
     return "**#{member.display_name}** successfully unregistered."
   end
 
   #######################################
   # RANK INFORMATION
   #######################################
-  def ranks(member, event, db_user = nil)
-    return RLRanks.ranks(member, event, db_user)
+  def ranks(member, event, db_user = nil, region = nil)
+    return RLRanks.ranks(member, event, db_user, region)
   end
 
   #####################################

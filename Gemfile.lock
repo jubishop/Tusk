@@ -21,9 +21,9 @@ GIT
 
 GIT
   remote: https://github.com/jubishop/core.git
-  revision: 38bf038e5db31dc79a116de61969707cecd305be
+  revision: 83bcf7295f0516d285e82b46a06d24d18a1e3dce
   specs:
-    core (1.0)
+    core (1.6)
 
 GIT
   remote: https://github.com/jubishop/datacache.git
@@ -36,14 +36,14 @@ GIT
 
 GIT
   remote: https://github.com/jubishop/duration.git
-  revision: 3a1e63b824c774ffec0a169202a7ec84db14d0d7
+  revision: 1ce4250dab7f51c445088dc2bc59580e7b78d373
   specs:
     duration (1.0)
       core
 
 GIT
   remote: https://github.com/jubishop/jubibot.git
-  revision: b103f372ec3229c0d3974cd1d11a8a323555e130
+  revision: 51469cbafab97b3c0b7a21b2417bf4127f8068d1
   specs:
     jubibot (1.0)
       core

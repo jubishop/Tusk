@@ -11,7 +11,7 @@ require_relative 'RLDB'
 require_relative 'RLRoles'
 
 class RLRanks
-  def self.ranks(member, event, db_user = nil)
+  def self.ranks(member, event, db_user = nil, region = nil)
     event.channel.send_message(
         "Now fetching ranks for: **#{member.display_name}**...")
     db_user ||= RLDB.user(member.id, member.server.id)
@@ -19,7 +19,7 @@ class RLRanks
     ranks = fetch_ranks(db_user)
     return "Couldn't fetch ranks for #{member.display_name}." unless ranks
 
-    RLRoles.update_role(member, ranks)
+    RLRoles.update_roles(member, ranks, region)
     RLDB.store_ranks(ranks)
     return "#{member.display_name} isn't ranked in anything." if ranks.unranked?
 

@@ -4,11 +4,11 @@
 
 ## Getting Started
 
-### [Install TuskBot](https://discordapp.com/oauth2/authorize?&client_id=708694380869058600&permissions=268848192&scope=bot) on your discord server
+### [Install TuskBot](https://discordapp.com/oauth2/authorize?&client_id=708694380869058600&permissions=470207553&scope=bot) on your discord server
 
-#### "Manage Roles" permission
+#### `Manage Roles` permission
 
-If the "Manage Roles" permission is granted, `TuskBot` will create 19 new roles (unless they already exist).  These will be named:
+If the `Manage Roles` permission is granted: `TuskBot` will create 19 rank roles.  These will be named:
 
 - `Bronze I`
 - `Bronze II`
@@ -33,9 +33,28 @@ If the "Manage Roles" permission is granted, `TuskBot` will create 19 new roles 
 - `Grand Champion III`
 - `Supersonic Legend`
 
-Then: everytime a `!register` or `!ranks` is executed, that player will be automatically assigned the role of their highest rank.
+Then: every time a `!register` or `!ranks` is executed, that player will be automatically assigned the role of their highest rank.
+
+`TuskBot` will also create 10 regional roles named:
+
+- `JPN`
+- `ASC`
+- `ASM`
+- `ME`
+- `OCE`
+- `SAF`
+- `EU`
+- `USE`
+- `USW`
+- `SAM`
+
+Then: every time `[region]` is included in a `!register`, that player will be automatically assigned the role of their region.
 
 You can choose to add this permission at any time and `TuskBot` will go to work adding these roles and assigning them to players upon execution of `!register` or `!ranks`
+
+#### `Manage Nicknames` permission
+
+If the `Manage Nicknames` permission is granted: every time a `[region]` is included in a `!register`, that player will have that region prefix added to their server Nickname, wrapped in brackets, such as `[USW]`.
 
 #### Type `!help`
 
@@ -46,51 +65,61 @@ Once the bot is installed, you can type `!help` to see a list of all possible co
 Most commands won't work unless you have registered your Rocket League account first:
 
 ```shell
-!register <account-id> <steam|epic|xbox|ps>
+!register <account-id> <platform(steam|epic|xbox|ps)> [region(JPN|ASC|ASM|ME|OCE|SAF|EU|USE|USW|SAM)]
 ```
 
-- **Steam**:
-  - **`<account-id>`**: This is the unique ID that identifies your steam account.  You can use either:
+### `<account-id> <platform>`
+
+Both `<account-id>` and `<platform>` are required.
+
+- **steam**:
+  - You can use either:
     - The number at the end of a link like `http://steamcommunity.com/profiles/76561198257073170`.  In this case it would be `76561198257073170`.
     - The text at the end of a link like `https://steamcommunity.com/id/jubishop`.  In this case it would be `jubishop`.
-    - On the desktop version of Steam, you can find this link by right-clicking anywhere in the empty space of your profile and selecting `Copy Page Url`.  Then simply paste it into the address bar of your browser.
-  - **`[platform]`**:  This should be `steam`.
-  - ***Example***: In this case, the player could register with: `!register 76561198257073170` or: `!register jubishop`.
+  - Examples:
+    - `!register 76561198257073170 steam`
+    - `!register jubishop steam`
 
-- **XBox**:
-  - **`<account-id>`**:  This is your Gamertag.
-  - **`[platform]`**: This should be `xbox`.
-  - ***Example***: If your Gamertag is `jubishop`, you'd register with: `!register jubishop xbox`
-  - If your Gamertag contains spaces, wrap it in quotes: `!register "My Name" xbox`
+- **xbox**
+  - Use your Gamertag:
+    - `!register jubishop xbox`
 
-- **Playstation**:
-  - **`<account-id>`**:  This is your PSN.
-  - **`[platform]`**: This should be `ps`.
-  - ***Example***: If your PSN is `jubishop`, you'd register with: `!register jubishop ps`
-  - If your PSN contains spaces, wrap it in quotes: `!register "My Name" ps`
+- **ps**
+  - Use your PSN:
+    - `!register jubishop ps`
 
-- **Epic**:
-  - **`<account-id>`**:  This is your Epic name.
-  - **`[platform]`**: This should be `epic`.
-  - ***Example***: If your Epic name is `jubishop`, you'd register with: `!register jubishop epic`
-  - If your Epic name contains spaces, wrap it in quotes: `!register "My Name" epic`
+- **epic**
+  - Use your Epic name:
+    - `!register jubishop epic`
 
-- **Switch**:  Sorry, Switch is not yet supported.
+If your `<account-id>` has spaces in it, wrap it in quotes:
+
+- `!register "My Name" epic`
+- `!register "Cool Dude" steam`
+
+### `[region]`
+
+`[region]` is optional.  If you include a `[region]` when registering:
+
+- `TuskBot` will assign you a role matching your region.  (If the `Manage Roles` permission has been granted)
+- `TuskBot` will add a tag to the beginning of your Nickname containing your region.  (If the `Manage Nicknames` permission has been granted)
+
+For example, if I registered with: `!register jubishop steam USW` and my nickname was `jubishop`, it'd become `[USW] jubishop` and I'd be given the role `USW`.
 
 #### Registering others
 
-If you are the server's owner (or you have the role `tusk_admin`), you can register people other than yourself.  The command is `!admin_register`, and the first param becomes the discord user to register.
+If you are the server's owner (or you have the role `tusk_admin`), you can register people other than yourself.  The command is `!admin_register`, and the first param becomes a mention of the discord user to register.
 
-- ***Steam Example***: `!admin_register @jubi jubishop`
-- ***XBox Example***: `!admin_register @jubi jubishop xbox`
-- ***PS Example***: `!admin_register @jubi jubishop ps`
-- ***Epic Example***: `!admin_register @jubi jubishop epic`
+- ***Steam/USE Example***: `!admin_register @jubi jubishop USE`
+- ***XBox/USW Example***: `!admin_register @jubi jubishop xbox USW`
+- ***PS/EU Example***: `!admin_register @jubi jubishop ps EU`
+- ***Epic/OCE Example***: `!admin_register @jubi jubishop epic OCE`
 
 ### Playlists
 
 #### Defining which playlists affect roles and ranks
 
-By default, all playlists are considered when assigning roles or best rank. Server owners (or users with the role `tusk_admin`) can narrow this selection to any set of playlists they prefer using `!playlists`.  Playlist names are identified as:
+By default, all playlists are considered when assigning roles based on rank. Server owners (or users with the role `tusk_admin`) can narrow this selection to any set of playlists they prefer using `!playlists`.  Playlist names are identified as:
 
 - `standard`
 - `doubles`
@@ -101,7 +130,7 @@ By default, all playlists are considered when assigning roles or best rank. Serv
 - `snow_day`
 - `tournament`
 
-Join the playlists you care about with a `|` between each one.  For example, if you want to only assign roles based on the ranks in the `doubles`, `standard`, and `tournament` playlists:
+List the playlists you care about with a `|` between each one.  For example, if you want to only assign roles based on the ranks in the `doubles`, `standard`, and `tournament` playlists:
 
 ```shell
 !playlists doubles|standard|tournament
@@ -126,19 +155,19 @@ Server owners (or users with the role `tusk_admin`) can also update the role of 
 ![Image of Ranks](./images/ranks.png)
 
 - To get your own ranks, simply type `!ranks`
-- To get the ranks of another registered player, follow the command with the name, nickname, or @ of another discord member.
+- To get the ranks of another registered player, follow the command with the name, nickname, or @mention of another discord member.
   - ***Example***: `!ranks jubi`
   - ***Example***: `!ranks @jubi`
-- If the `Manage Roles` permission has been granted, every time a rank is checked, the role of that player will be updated to their current highest rank.
-- Because Psyonix provides no official API for accessing console ranks, the ranks TuskBot reports for Playstation and XBox accounts may be somewhat outdated.  😕
+- Every time a rank is checked, the role of that player will be updated to their current highest rank.  (If the `Manage Roles` permission has been granted)
+- Because Psyonix provides no official API for accessing ranks, the ranks TuskBot reports for Playstation, XBox and Epic accounts may be somewhat outdated.  😕
 
-## Stats
+## Stats from ballchasing.com
 
-There are 2 commands for getting stats in various ways.
+There are 2 commands for getting stats from ballchasing.com
 
 ### Series Stats
 
-Lifetime stats aren't great for comparing players.  Someone who mostly plays Duel 1v1 is going to have wildly different stats than someone that prefers Standard 3v3.  The `!series` command provides a way to view stats for the specific games where all the players were playing together.  This makes for much more interesting comparisons.
+The `!series` command provides a way to view stats for the specific games where all the given players were playing together.  This makes for much more interesting comparisons.
 
 ```shell
 !series [member1] [member2] [member3] ...
@@ -160,7 +189,7 @@ Lifetime stats aren't great for comparing players.  Someone who mostly plays Due
 
 ### Alltime Series Stats
 
-Everytime a `!series` command is executed, `TuskBot` stores those replays in its own database.  The `!alltime` command uses those stored replays to show you the aggregate data of all the `!series` commands you've ever run.  So as long as you execute a `!series` command at least once every 36 hours, you'll be able to use `!alltime` to get the complete comparative stats of your games ever since you began using `TuskBot`.
+Every time a `!series` command is executed, `TuskBot` stores those replays in its own database.  The `!alltime` command uses those stored replays to show you the aggregate data of all the `!series` commands you've ever run.  So as long as you execute a `!series` command every 72 hours, you'll be able to use `!alltime` to get the complete stats of every game played since you began using `TuskBot`.
 
 ```shell
 !alltime [member1] [member2] [member3] ...

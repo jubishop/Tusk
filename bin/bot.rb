@@ -12,7 +12,7 @@ jubi = JubiBot.new(
     prefix: proc { |event| return RLDB.server_prefix(event&.server&.id) },
     doc_file: File.expand_path('../documentation/commands.json', __dir__),
     homepage: 'https://jubishop.com/Tusk/',
-    permissions: 268848192,
+    permissions: 470207553,
     error_message: 'Something went wrong.  Would you file an issue at ' \
       'https://github.com/jubishop/Tusk/issues or join ' \
       'https://discord.gg/2YSmnyX and tell `jubi` about it?')
@@ -26,12 +26,13 @@ jubi.command(:user_info, num_args: (0..1)) { |event, name|
 
 jubi.command(
     :admin_register,
-    num_args: (2..3),
-    owners: 'tusk_admin') { |event, name, account_id, platform|
+    num_args: (2..4),
+    owners: 'tusk_admin') { |event, name, account_id, platform, region|
   platform = platform.to_sym
   RLBot.validate_platform(platform)
+  RLBot.validate_region(region) if region
 
-  return jubi.member(event, name), account_id, platform, event
+  return jubi.member(event, name), account_id, platform, region, event
 }
 
 jubi.command(:admin_unregister,
@@ -90,11 +91,12 @@ jubi.command(:uptime)
 #######################################
 jubi.command(:register,
              aliases: %i[add signup],
-             num_args: (1..2)) { |event, account_id, platform|
+             num_args: (1..3)) { |event, account_id, platform, region|
   platform = platform.to_sym
   RLBot.validate_platform(platform)
+  RLBot.validate_region(region) if region
 
-  return event.author, account_id, platform, event
+  return event.author, account_id, platform, region, event
 }
 
 jubi.command(:unregister, aliases: %i[remove delete]) { |event|
