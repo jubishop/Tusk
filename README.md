@@ -56,6 +56,8 @@ You can choose to add this permission at any time and `TuskBot` will go to work 
 
 If the `Manage Nicknames` permission is granted: every time a `[region]` is included in a `!register`, that player will have that region prefix added to their server Nickname, wrapped in brackets, such as `[USW]`.
 
+Note:  Due to Discord permissions, `Tusk` can't change the Nickname of server Owners and Administrators.
+
 #### Type `!help`
 
 Once the bot is installed, you can type `!help` to see a list of all possible commands.
