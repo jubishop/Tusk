@@ -44,7 +44,7 @@ class RLDB
   ##########################
 
   def initialize
-    unless ENV.key?('DATABASE_URL') || ENV.key?('DISCORD_DB')
+    if !ENV.key?('DATABASE_URL') && !ENV.key?('DISCORD_DB')
       raise ArgumentError, 'ENV DATABASE_URL or DISCORD_DB must be set'
     end
 
