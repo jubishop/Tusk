@@ -65,7 +65,9 @@ Once the bot is installed, you can type `!help` to see a list of all possible co
 Most commands won't work unless you have registered your Rocket League account first:
 
 ```shell
-!register <account-id> <platform(steam|epic|xbox|ps)> [region(JPN|ASC|ASM|ME|OCE|SAF|EU|USE|USW|SAM)]
+!register <account-id>
+          <platform(steam|epic|xbox|ps)>
+          [region(JPN|ASC|ASM|ME|OCE|SAF|EU|USE|USW|SAM)]
 ```
 
 ### `<account-id> <platform>`
