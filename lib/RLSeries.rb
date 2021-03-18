@@ -7,8 +7,6 @@ require 'jubibot'
 require_relative 'RLDB'
 
 class RLSeries
-  include JubiSingleton
-
   ##### PRIVATE CONSTANTS #####
   NUM_THREADS = 4
   private_constant :NUM_THREADS
@@ -115,7 +113,7 @@ class RLSeries
   private_constant :PlayerStats
   ###########################
 
-  def series(jubi, uploader, members, channel, duration = 72.hours)
+  def self.series(jubi, uploader, members, channel, duration = 72.hours)
     db_uploader, db_users = fetch_users(uploader, members)
     unless db_uploader.platform == :steam
       raise JubiBotError, 'Only `steam` users can use the `series` command.'
@@ -142,7 +140,7 @@ class RLSeries
     jubi.send_paginated_message(channel, messages)
   end
 
-  def alltime(jubi, uploader, members, channel)
+  def self.alltime(jubi, uploader, members, channel)
     db_uploader, db_users = fetch_users(uploader, members)
     unless db_uploader.platform == :steam
       raise JubiBotError, 'Only `steam` users can use the `alltime` command.'
@@ -158,12 +156,12 @@ class RLSeries
     jubi.send_paginated_message(channel, messages)
   end
 
-  private
+  ##### PRIVATE #####
 
   #####################################
   # RESPONSE MARKUP
   #####################################
-  def replay_messages(members, db_users, replays)
+  def self.replay_messages(members, db_users, replays)
     player_stats = db_users.map { |db_user|
       [db_user.id, PlayerStats.new(db_user, replays.values)]
     }.to_h
@@ -174,8 +172,9 @@ class RLSeries
       MESSAGE
     }
   end
+  private_class_method :replay_messages
 
-  def description(members, player_stats, group, attributes)
+  def self.description(members, player_stats, group, attributes)
     rjust = attributes.values.max_by(&:length).length
 
     description = '```'
@@ -209,21 +208,23 @@ class RLSeries
     description << '```'
     return description
   end
+  private_class_method :description
 
   #####################################
   # FETCHING DATA
   #####################################
   # Fetches database entries of uploader and series members.
-  def fetch_users(uploader, members)
+  def self.fetch_users(uploader, members)
     all_users = [uploader] + members
     all_users.uniq!
     all_users.map!(&:id)
     db_all = RLDB.users(all_users, uploader.server.id)
     return db_all.fetch(uploader.id), db_all.fetch_values(*members.map(&:id))
   end
+  private_class_method :fetch_users
 
   # Fetches summaries of all games from uploader with all users playing.
-  def fetch_summaries(db_uploader, db_users, duration)
+  def self.fetch_summaries(db_uploader, db_users, duration)
     summaries = try_api(db_uploader.server) { |api|
       # rubocop:disable Lint/SymbolConversion
       api.replays('uploader': db_uploader.account,
@@ -241,9 +242,10 @@ class RLSeries
       }
     }
   end
+  private_class_method :fetch_summaries
 
   # Fetches replay details of all games in given summaries.
-  def fetch_replays(channel, summaries, server)
+  def self.fetch_replays(channel, summaries, server)
     replay_ids = summaries.map(&:id)
     db_replays = RLDB.replays(replay_ids)
 
@@ -276,9 +278,10 @@ class RLSeries
 
     return db_replays, api_replays
   end
+  private_class_method :fetch_replays
 
   # Generic wrapper of calls to ballchasing.com API with error catching.
-  def try_api(server)
+  def self.try_api(server)
     api = Ballchasing::API.new(
         ENV['BALLCHASING_TOKEN'],
         "TuskBot; server=#{server}")
@@ -298,4 +301,5 @@ class RLSeries
     WARN
     raise JubiBotError, 'API error of some sort with ballchasing.com'
   end
+  private_class_method :try_api
 end
