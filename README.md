@@ -46,7 +46,7 @@ Once the bot is installed, you can type `!help` to see a list of all possible co
 Most commands won't work unless you have registered your Rocket League account first:
 
 ```shell
-!register <account-id> [platform]
+!register <account-id> [steam|epic|xbox|ps] [region]
 ```
 
 - **Steam**:
@@ -54,7 +54,7 @@ Most commands won't work unless you have registered your Rocket League account f
     - The number at the end of a link like `http://steamcommunity.com/profiles/76561198257073170`.  In this case it would be `76561198257073170`.
     - The text at the end of a link like `https://steamcommunity.com/id/jubishop`.  In this case it would be `jubishop`.
     - On the desktop version of Steam, you can find this link by right-clicking anywhere in the empty space of your profile and selecting `Copy Page Url`.  Then simply paste it into the address bar of your browser.
-  - **`[platform]`**:  This defaults to steam, so you can omit it.
+  - **`[platform]`**:  This should be `steam`.
   - ***Example***: In this case, the player could register with: `!register 76561198257073170` or: `!register jubishop`.
 
 - **XBox**:

@@ -27,7 +27,7 @@ jubi.command(:user_info, num_args: (0..1)) { |event, name|
 jubi.command(
     :admin_register,
     num_args: (2..3),
-    owners: 'tusk_admin') { |event, name, account_id, platform = :steam|
+    owners: 'tusk_admin') { |event, name, account_id, platform|
   platform = platform.to_sym
   RLBot.validate_platform(platform)
 
@@ -90,7 +90,7 @@ jubi.command(:uptime)
 #######################################
 jubi.command(:register,
              aliases: %i[add signup],
-             num_args: (1..2)) { |event, account_id, platform = :steam|
+             num_args: (1..2)) { |event, account_id, platform|
   platform = platform.to_sym
   RLBot.validate_platform(platform)
 
