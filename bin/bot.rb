@@ -26,7 +26,7 @@ jubi.command(:user_info, num_args: (0..1)) { |event, name|
 
 jubi.command(
     :admin_register,
-    num_args: (2..4),
+    num_args: (3..4),
     owners: 'tusk_admin') { |event, name, account_id, platform, region|
   platform = platform.to_sym
   RLBot.validate_platform(platform)
@@ -91,7 +91,7 @@ jubi.command(:uptime)
 #######################################
 jubi.command(:register,
              aliases: %i[add signup],
-             num_args: (1..3)) { |event, account_id, platform, region|
+             num_args: (2..3)) { |event, account_id, platform, region|
   platform = platform.to_sym
   RLBot.validate_platform(platform)
   RLBot.validate_region(region) if region
