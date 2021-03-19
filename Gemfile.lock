@@ -21,7 +21,7 @@ GIT
 
 GIT
   remote: https://github.com/jubishop/core.git
-  revision: 83bcf7295f0516d285e82b46a06d24d18a1e3dce
+  revision: a74b45fad06f019b3208fc2d3d879f2a56bae1e5
   specs:
     core (1.6)
 
@@ -43,7 +43,7 @@ GIT
 
 GIT
   remote: https://github.com/jubishop/jubibot.git
-  revision: 51469cbafab97b3c0b7a21b2417bf4127f8068d1
+  revision: 25bac3f22d3fa1a43a53beffe00f6eafe78c369e
   specs:
     jubibot (1.0)
       core
