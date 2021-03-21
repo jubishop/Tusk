@@ -98,8 +98,8 @@ class RLBot
     all_users.each { |db_user|
       member = event.server.member(db_user.id)
       if member
-        ranks(member, event, db_user)
-        sleep(5)
+        ranks(member, event)
+        sleep(3)
       end
     }
   end
@@ -140,7 +140,7 @@ class RLBot
         "**#{member.display_name}** successfully registered.")
 
     RLRegions.update_nick(member, region)
-    ranks(member, event, db_user, region)
+    ranks(member, event, region)
   end
 
   def unregister(member)
@@ -153,8 +153,8 @@ class RLBot
   #######################################
   # RANK INFORMATION
   #######################################
-  def ranks(member, event, db_user = nil, region = nil)
-    return RLRanks.ranks(member, event, db_user, region)
+  def ranks(member, event, region = nil)
+    return RLRanks.ranks(member, event, region)
   end
 
   #####################################

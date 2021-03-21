@@ -5,12 +5,14 @@ require_relative 'RLRegions'
 
 module RLRoles
   def self.update_roles(member, ranks, region = nil)
-    rank_role, all_rank_roles = RLRankRoles.roles(member, ranks)
-    region_role, all_region_roles = RLRegions.roles(member, region)
+    add_roles, remove_roles = RLRankRoles.roles(member, ranks)
+    if region
+      region_role, all_region_roles = RLRegions.roles(member, region)
+      add_roles += region_role
+      remove_roles += all_region_roles
+    end
 
-    member.modify_roles(
-        rank_role + region_role, # add
-        all_rank_roles + all_region_roles) # remove
+    member.modify_roles(add_roles, remove_roles)
   rescue Discordrb::Errors::NoPermission
     Discordrb::LOGGER.warn("Can't update roles on #{member.server.name}")
   end
