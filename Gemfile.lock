@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/jubishop/ballchasing.git
-  revision: a6560a4a2d23c1fa274ecbaa0afe710bdfaf3ee6
+  revision: 09b11cf7d6ce49b09ec305e3ff89836e89313fa7
   specs:
     ballchasing (1.0)
       core
@@ -21,9 +21,9 @@ GIT
 
 GIT
   remote: https://github.com/jubishop/core.git
-  revision: a74b45fad06f019b3208fc2d3d879f2a56bae1e5
+  revision: 7a25618c6244954ad65c1980ddc01688b64b5cbc
   specs:
-    core (1.6)
+    core (1.12)
 
 GIT
   remote: https://github.com/jubishop/datacache.git
@@ -36,14 +36,14 @@ GIT
 
 GIT
   remote: https://github.com/jubishop/duration.git
-  revision: 1ce4250dab7f51c445088dc2bc59580e7b78d373
+  revision: 5a4d4bc2aa1f15de50b5f1449b632095bbface4a
   specs:
-    duration (1.0)
+    duration (1.1)
       core
 
 GIT
   remote: https://github.com/jubishop/jubibot.git
-  revision: 25bac3f22d3fa1a43a53beffe00f6eafe78c369e
+  revision: 16870f22e75148f949d3a5e5a2decaef1a22dbd7
   specs:
     jubibot (1.0)
       core
