@@ -1,5 +1,2 @@
 inherit_from:
   - https://raw.githubusercontent.com/jubishop/core/master/.rubocop.yml
-
-Style/DateTime:
-  Enabled: false

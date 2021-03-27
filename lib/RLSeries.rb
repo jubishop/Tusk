@@ -226,13 +226,13 @@ class RLSeries
   # Fetches summaries of all games from uploader with all users playing.
   def self.fetch_summaries(db_uploader, db_users, duration)
     summaries = try_api(db_uploader.server) { |api|
-      # rubocop:disable Lint/SymbolConversion
+      # rubocop:disable Lint/SymbolConversion, Style/DateTime
       api.replays('uploader': db_uploader.account,
                   'replay-date-after': (DateTime.now - duration).rfc3339,
                   'sort-by': 'replay-date',
                   'sort-dir': 'asc',
                   'count': 200)
-      # rubocop:enable Lint/SymbolConversion
+      # rubocop:enable Lint/SymbolConversion, Style/DateTime
     }
 
     return summaries.select { |summary|
