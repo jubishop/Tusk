@@ -65,8 +65,7 @@ jubi.command(:playlists,
   return event.server, playlists.split('|')
 }
 
-jubi.command(:clear_playlists,
-             owners: 'tusk_admin') { |event|
+jubi.command(:clear_playlists, owners: 'tusk_admin') { |event|
   return event.server
 }
 
@@ -84,11 +83,11 @@ jubi.command(:set_command_prefix,
   return event.server, prefix
 }
 
-jubi.command(:enable_region_roles) { |event|
+jubi.command(:enable_region_roles, owners: 'tusk_admin') { |event|
   return event.server
 }
 
-jubi.command(:disable_region_roles) { |event|
+jubi.command(:disable_region_roles, owners: 'tusk_admin') { |event|
   return event.server
 }
 

@@ -50,7 +50,7 @@ Then: every time a `!register` or `!ranks` is executed, that player will be auto
 
 Then: every time `[region]` is included in a `!register`, that player will be automatically assigned the role of their region.
 
-You can choose to disable the creation and assignment of regional roles with `!disable_region_roles`.  If later you'd like to turn them back on, simply execute `!enable_region_roles`.
+If you are the server's owner (or you have the role `tusk_admin`), you can choose to disable the creation and assignment of regional roles with `!disable_region_roles`.  If later you'd like to turn them back on, simply execute `!enable_region_roles`.
 
 You can choose to add the `Manage Roles` permission at any time and `TuskBot` will go to work adding these roles and assigning them to players upon execution of `!register` or `!ranks`
 
@@ -58,7 +58,7 @@ You can choose to add the `Manage Roles` permission at any time and `TuskBot` wi
 
 If the `Manage Nicknames` permission is granted: every time a `[region]` is included in a `!register`, that player will have that region prefix added to their server Nickname, wrapped in brackets, such as `[USW]`.
 
-You can choose to disable the assignment of region prefixes to server Nicknames with `!disable_region_roles`.  If later you'd like to turn them back on, simply execute `!enable_region_roles`.
+If you are the server's owner (or you have the role `tusk_admin`), you can choose to disable the assignment of regional prefixes to server Nicknames with `!disable_region_roles`.  If later you'd like to turn them back on, simply execute `!enable_region_roles`.
 
 Note:  Due to Discord permissions, `Tusk` can't change the Nickname of server Owners and Administrators.
 
