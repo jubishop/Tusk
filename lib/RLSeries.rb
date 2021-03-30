@@ -122,12 +122,12 @@ class RLSeries
     names = members.sentence { |member| "**#{member.display_name}**" }
     summaries = fetch_summaries(db_uploader, db_users, duration)
     if summaries.empty?
-      return "Could not find any games in the last #{duration.hours} hours " \
-             "with #{names}."
+      return "Could not find any games in the last #{duration.hours.to_i} " \
+             "hours with #{names}."
     end
 
     channel.send_message("Found #{summaries.length} games with #{names} in " \
-      "the last #{duration.hours} hours.")
+      "the last #{duration.hours.to_i} hours.")
 
     db_replays, api_replays = fetch_replays(channel,
                                             summaries,
@@ -196,7 +196,7 @@ class RLSeries
                 else
                   avg = player_stat.avg(group_name, attrib)
                   if avg.is_a?(Duration)
-                    "#{avg.minutes!}m#{avg.seconds!}s"
+                    "#{avg.minutes.to_i}m#{(avg.seconds % 60).to_i}s"
                   else
                     avg.to_f.round([4 - Math.log((avg + 1), 10), 0].max)
                   end

@@ -1,6 +1,7 @@
+require 'rstruct'
 require 'set'
 
-require 'rstruct'
+require_relative 'RLDB'
 
 class RLRegions
   ##### PRIVATE STRUCTS #####
@@ -29,10 +30,10 @@ class RLRegions
 
   ##### NICK MANAGEMENT #####
   def self.update_nick(member, region)
-    return unless region
+    return unless region && RLDB.server_region_roles(member.server.id)
 
     member.nick = "[#{region}] #{member.display_name}"
-  rescue Discordrb::Errors::NoPermission
+  rescue Discordrb::Errors::NoPermission, RestClient::BadRequest
     Discordrb::LOGGER.warn("Can't set nick on #{member.server.name}")
   end
 

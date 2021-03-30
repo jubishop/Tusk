@@ -1,7 +1,6 @@
-require 'singleton'
-
 require 'calculated'
 require 'core'
+require 'singleton'
 
 require_relative 'RLDB'
 require_relative 'RLRanks'
@@ -112,6 +111,16 @@ class RLBot
   def set_command_prefix(server, prefix)
     RLDB.store_server_prefix(server.id, prefix)
     return "#{server.name} command prefix set to #{prefix}"
+  end
+
+  def enable_region_roles(server)
+    RLDB.store_server_region_roles(server.id, true)
+    return "#{server.name} region roles now enabled"
+  end
+
+  def disable_region_roles(server)
+    RLDB.store_server_region_roles(server.id, false)
+    return "#{server.name} region roles now disabled"
   end
 
   def uptime

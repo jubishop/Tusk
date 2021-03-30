@@ -136,6 +136,24 @@ class RLDB
     ServerCache.invalidate(server)
   end
 
+  def server_region_roles(server)
+    server_info = _server_info(server)
+    return true unless server_info
+
+    return server_info.fetch(:region_roles) == 't'
+  end
+
+  def store_server_region_roles(server, enabled)
+    sql(<<~SQL)
+      insert into servers (id, region_roles)
+        values (#{server}, '#{enabled}')
+      on conflict (id) do update set
+        region_roles = '#{enabled}'
+    SQL
+
+    ServerCache.invalidate(server)
+  end
+
   def server_prefix(server)
     return '!' unless server
 

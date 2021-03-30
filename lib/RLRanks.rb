@@ -1,8 +1,7 @@
-require 'http'
-
 require 'core'
 require 'calculated'
 require 'discordrb'
+require 'http'
 require 'json'
 require 'rlranks'
 require 'steam'

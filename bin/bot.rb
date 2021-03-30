@@ -84,6 +84,14 @@ jubi.command(:set_command_prefix,
   return event.server, prefix
 }
 
+jubi.command(:enable_region_roles) { |event|
+  return event.server
+}
+
+jubi.command(:disable_region_roles) { |event|
+  return event.server
+}
+
 jubi.command(:uptime)
 
 #######################################

@@ -43,7 +43,8 @@ db.exec(<<~SQL)
   create table servers (
     id bigint not null primary key,
     prefix varchar(8) default '!',
-    playlists int
+    playlists int,
+    region_roles boolean default true,
   )
 SQL
 

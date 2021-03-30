@@ -1,12 +1,13 @@
 require 'rstruct'
 
+require_relative 'RLDB'
 require_relative 'RLRankRoles'
 require_relative 'RLRegions'
 
 module RLRoles
   def self.update_roles(member, ranks, region = nil)
     add_roles, remove_roles = RLRankRoles.roles(member, ranks)
-    if region
+    if region && RLDB.server_region_roles(member.server.id)
       region_role, all_region_roles = RLRegions.roles(member, region)
       add_roles += region_role
       remove_roles += all_region_roles
