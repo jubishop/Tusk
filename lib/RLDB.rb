@@ -136,6 +136,24 @@ class RLDB
     ServerCache.invalidate(server)
   end
 
+  def server_platform_roles(server)
+    server_info = _server_info(server)
+    return true unless server_info
+
+    return server_info.fetch(:platform_roles) == 't'
+  end
+
+  def store_server_platform_roles(server, enabled)
+    sql(<<~SQL)
+      insert into servers (id, platform_roles)
+        values (#{server}, '#{enabled}')
+      on conflict (id) do update set
+        platform_roles = '#{enabled}'
+    SQL
+
+    ServerCache.invalidate(server)
+  end
+
   def server_region_roles(server)
     server_info = _server_info(server)
     return true unless server_info

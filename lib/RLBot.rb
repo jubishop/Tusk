@@ -123,6 +123,16 @@ class RLBot
     return "#{server.name} region roles now disabled"
   end
 
+  def enable_platform_roles(server)
+    RLDB.store_server_platform_roles(server.id, true)
+    return "#{server.name} platform roles now enabled"
+  end
+
+  def disable_platform_roles(server)
+    RLDB.store_server_platform_roles(server.id, false)
+    return "#{server.name} platform roles now disabled"
+  end
+
   def uptime
     return Duration.new(Time.now - @start_time).to_s
   end
@@ -148,7 +158,7 @@ class RLBot
         "**#{member.display_name}** successfully registered.")
 
     RLRegions.update_nick(member, region)
-    ranks(member, event, region)
+    RLRoles.update_roles(member, RLRanks.ranks(member, event), platform, region)
   end
 
   def unregister(member)
@@ -161,8 +171,8 @@ class RLBot
   #######################################
   # RANK INFORMATION
   #######################################
-  def ranks(member, event, region = nil)
-    return RLRanks.ranks(member, event, region)
+  def ranks(member, event)
+    RLRoles.update_roles(member, RLRanks.ranks(member, event))
   end
 
   #####################################

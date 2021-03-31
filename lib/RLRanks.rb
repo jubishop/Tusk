@@ -10,24 +10,28 @@ require_relative 'RLDB'
 require_relative 'RLRoles'
 
 class RLRanks
-  def self.ranks(member, event, region = nil)
+  def self.ranks(member, event)
     event.channel.send_message(
         "Now fetching ranks for: **#{member.display_name}**...")
 
     db_user = RLDB.user(member.id, member.server.id)
     ranks = fetch_ranks(db_user)
-    return "Couldn't fetch ranks for #{member.display_name}." unless ranks
+    unless ranks
+      event.channel.send_message(
+          "Couldn't fetch ranks for #{member.display_name}.")
+      return RLRanks.new(db_user.id, db_user.account, db_user.platform)
+    end
 
-    RLRoles.update_roles(member, ranks, region)
     RLDB.store_ranks(ranks)
 
     playlists = RLDB.server_playlists(member.server.id)
     if ranks.unranked?(playlists)
-      return "#{member.display_name} isn't ranked in anything."
+      event.channel.send_message(
+          "#{member.display_name} isn't ranked in anything.")
+      return ranks
     end
 
     best_rank = ranks.best(playlists)
-
     event.channel.send_embed { |embed|
       embed.title = "**#{member.display_name}**'s Ranks"
       embed.timestamp = Time.now
@@ -58,6 +62,8 @@ class RLRanks
             icon_url: player_summary[:avatarfull])
       end
     }
+
+    return ranks
   end
 
   ##### PRIVATE #####

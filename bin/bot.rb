@@ -95,6 +95,14 @@ jubi.command(:disable_region_roles,
   return event.server
 }
 
+jubi.command(:enable_platform_roles, owners: 'tusk_admin') { |event|
+  return event.server
+}
+
+jubi.command(:disable_platform_roles, owners: 'tusk_admin') { |event|
+  return event.server
+}
+
 jubi.command(:uptime)
 
 #######################################

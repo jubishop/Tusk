@@ -6,7 +6,11 @@
 
 ### [Install TuskBot](https://discordapp.com/oauth2/authorize?&client_id=708694380869058600&permissions=470207553&scope=bot) on your discord server
 
-#### `Manage Roles` permission
+## `Manage Roles` permission
+
+You can choose to add the `Manage Roles` permission at any time and `TuskBot` will go to work adding these roles and assigning them to players upon execution of `!register` or `!ranks`.
+
+### Rank Roles
 
 If the `Manage Roles` permission is granted: `TuskBot` will create 19 rank roles.  These will be named:
 
@@ -35,7 +39,9 @@ If the `Manage Roles` permission is granted: `TuskBot` will create 19 rank roles
 
 Then: every time a `!register` or `!ranks` is executed, that player will be automatically assigned the role of their highest rank.
 
-`TuskBot` will also create 10 regional roles named:
+### Regional Roles
+
+If the `Manage Roles` permission is granted: `TuskBot` will create 10 regional roles named:
 
 - `JPN`
 - `ASC`
@@ -50,23 +56,34 @@ Then: every time a `!register` or `!ranks` is executed, that player will be auto
 
 Then: every time `[region]` is included in a `!register`, that player will be automatically assigned the role of their region.
 
-If you are the server's owner (or you have the role `tusk_admin`), you can choose to disable the creation and assignment of regional roles with `!disable_region_roles`.  If later you'd like to turn them back on, simply execute `!enable_region_roles`.
+Server owners (or users with the role `tusk_admin`) can choose to disable the creation and assignment of regional roles with `!disable_region_roles`.  If later you'd like to turn them back on, simply execute `!enable_region_roles`.
 
-You can choose to add the `Manage Roles` permission at any time and `TuskBot` will go to work adding these roles and assigning them to players upon execution of `!register` or `!ranks`
+### Platform Roles
 
-#### `Manage Nicknames` permission
+If the `Manage Roles` permission is granted: `TuskBot` will create 4 platform roles named:
+
+- `ps`
+- `xbox`
+- `steam`
+- `epic`
+
+Then: every time a `!register` is executed, that player will automatically be assigned the role of their registered platform.
+
+Server owners (or users with the role `tusk_admin`) can choose to disable the creation and assignment of platform roles with `!disable_platform_roles`.  If later you'd like to turn them back on, simply execute `!enable_platform_roles`.
+
+## `Manage Nicknames` permission
 
 If the `Manage Nicknames` permission is granted: every time a `[region]` is included in a `!register`, that player will have that region prefix added to their server Nickname, wrapped in brackets, such as `[USW]`.
 
-If you are the server's owner (or you have the role `tusk_admin`), you can choose to disable the assignment of regional prefixes to server Nicknames with `!disable_region_roles`.  If later you'd like to turn them back on, simply execute `!enable_region_roles`.
+Server owners (or users with the role `tusk_admin`) can choose to disable the assignment of regional prefixes to server Nicknames with `!disable_region_roles`.  If later you'd like to turn them back on, simply execute `!enable_region_roles`.
 
 Note:  Due to Discord permissions, `Tusk` can't change the Nickname of server Owners and Administrators.
 
-#### Type `!help`
+## Type `!help`
 
 Once the bot is installed, you can type `!help` to see a list of all possible commands.
 
-### Register your Rocket League account
+## Registering your Rocket League account
 
 Most commands won't work unless you have registered your Rocket League account first:
 
@@ -110,49 +127,22 @@ If your `<account-id>` has spaces in it, wrap it in quotes:
 `[region]` is optional.  If you include a `[region]` when registering:
 
 - `TuskBot` will assign you a role matching your region.  (If the `Manage Roles` permission has been granted)
-- `TuskBot` will add a tag to the beginning of your Nickname containing your region.  (If the `Manage Nicknames` permission has been granted)
+- `TuskBot` will add a region prefix to the beginning of your Nickname containing your region.  (If the `Manage Nicknames` permission has been granted)
 
 For example, if I registered with: `!register jubishop steam USW` and my nickname was `jubishop`, it'd become `[USW] jubishop` and I'd be given the role `USW`.
 
-#### Registering others
+## Registering others
 
-If you are the server's owner (or you have the role `tusk_admin`), you can register people other than yourself.  The command is `!admin_register`, and the first param becomes a mention of the discord user to register.
+Server owners (or users with the role `tusk_admin`) can register people other than themselves.  The command is `!admin_register`, and the first param becomes a mention of the discord user to register.
 
 - ***Steam/USE Example***: `!admin_register @jubi jubishop USE`
 - ***XBox/USW Example***: `!admin_register @jubi jubishop xbox USW`
 - ***PS/EU Example***: `!admin_register @jubi jubishop ps EU`
 - ***Epic/OCE Example***: `!admin_register @jubi jubishop epic OCE`
 
-### Playlists
+### Updating all roles
 
-#### Defining which playlists affect roles and ranks
-
-By default, all playlists are considered when assigning roles based on rank. Server owners (or users with the role `tusk_admin`) can narrow this selection to any set of playlists they prefer using `!playlists`.  Playlist names are identified as:
-
-- `standard`
-- `doubles`
-- `duel`
-- `rumble`
-- `dropshot`
-- `hoops`
-- `snow_day`
-- `tournament`
-
-List the playlists you care about with a `|` between each one.  For example, if you want to only assign roles based on the ranks in the `doubles`, `standard`, and `tournament` playlists:
-
-```shell
-!playlists doubles|standard|tournament
-```
-
-If you run `!playlists` with no parameters, it'll show you what playlists are currently being used.
-
-If you want to go back to the default, run `!clear_playlists`.
-
-### Role Assignments
-
-#### Updating all roles
-
-Server owners (or users with the role `tusk_admin`) can also update the role of every registered user in the channel with `!update_all_roles`.
+Server owners (or users with the role `tusk_admin`) can also update the rank role of every registered user in the channel with `!update_all_roles`.
 
 ## Ranks
 
@@ -167,7 +157,6 @@ Server owners (or users with the role `tusk_admin`) can also update the role of 
   - ***Example***: `!ranks jubi`
   - ***Example***: `!ranks @jubi`
 - Every time a rank is checked, the role of that player will be updated to their current highest rank.  (If the `Manage Roles` permission has been granted)
-- Because Psyonix provides no official API for accessing ranks, the ranks TuskBot reports for Playstation, XBox and Epic accounts may be somewhat outdated.  😕
 
 ## Stats from ballchasing.com
 
@@ -207,7 +196,32 @@ Every time a `!series` command is executed, `TuskBot` stores those replays in it
 - The `!alltime` command will only pull data from the stored replays inside its local database.  Only the `!series` command will get new data from [ballchasing.com](http://ballchasing.com)
 - **If you do not upload your replays to [ballchasing.com](http://ballchasing.com), or you never run the `!series` command, you will get 0 results from `!alltime`.**
 
-### Custom Command Prefix
+## Playlists
+
+### Defining which playlists affect roles and ranks
+
+By default, all playlists are considered when assigning roles based on rank. Server owners (or users with the role `tusk_admin`) can narrow this selection to any set of playlists they prefer using `!playlists`.  Playlist names are identified as:
+
+- `standard`
+- `doubles`
+- `duel`
+- `rumble`
+- `dropshot`
+- `hoops`
+- `snow_day`
+- `tournament`
+
+List the playlists you care about with a `|` between each one.  For example, if you want to only assign roles based on the ranks in the `doubles`, `standard`, and `tournament` playlists:
+
+```shell
+!playlists doubles|standard|tournament
+```
+
+If you run `!playlists` with no parameters, it'll show you what playlists are currently being used.
+
+If you want to go back to the default, run `!clear_playlists`.
+
+## Custom Command Prefix
 
 By default, `TuskBot` will accept commands when you address it directly via `@Tusk` or prefix your command with `!`.  Server owners can change this with `!set_command_prefix`.  To change it to `@`:
 
@@ -229,7 +243,7 @@ If you ever forget what your command prefix is, you can address `@Tusk` directly
 
 Note: The maximum command prefix length is 8 characters.
 
-### URL Commands
+## URL Commands
 
 Use the `!help` command to learn about simple commands to get URLs to specific player pages on [ballchasing.com](http://ballchasing.com), [calculated.gg](http://calculated.gg), [rocketleague.tracker.network](http://rocketleague.tracker.network), etc.
 

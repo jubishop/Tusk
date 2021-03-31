@@ -10,7 +10,7 @@ class RLRegions
   ###########################
 
   ##### PRIVATE CONSTANTS #####
-  ROLE_COLOR = 0xfefefe
+  ROLE_COLOR = 0xc0c0c0
   private_constant :ROLE_COLOR
 
   REGION_ROLES = Set[
