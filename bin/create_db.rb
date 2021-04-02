@@ -45,6 +45,7 @@ db.exec(<<~SQL)
     prefix varchar(8) default '!',
     playlists int,
     region_roles boolean default true,
+    platform_roles boolean default true,
   )
 SQL
 
