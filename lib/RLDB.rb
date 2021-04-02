@@ -117,7 +117,7 @@ class RLDB
   # SERVERS TABLE
   #######################################
   def server_playlists(server)
-    server_info = _server_info(server)
+    server_info = server_info(server)
     return [] unless server_info
 
     return playlists_from_int(server_info.fetch(:playlists).to_i)
@@ -137,7 +137,7 @@ class RLDB
   end
 
   def server_platform_roles(server)
-    server_info = _server_info(server)
+    server_info = server_info(server)
     return true unless server_info
 
     return server_info.fetch(:platform_roles) == 't'
@@ -155,7 +155,7 @@ class RLDB
   end
 
   def server_region_roles(server)
-    server_info = _server_info(server)
+    server_info = server_info(server)
     return true unless server_info
 
     return server_info.fetch(:region_roles) == 't'
@@ -175,7 +175,7 @@ class RLDB
   def server_prefix(server)
     return '!' unless server
 
-    server_info = _server_info(server)
+    server_info = server_info(server)
     return '!' unless server_info
 
     return server_info.fetch(:prefix)
@@ -190,14 +190,6 @@ class RLDB
     SQL
 
     ServerCache.invalidate(server)
-  end
-
-  def _server_info(server)
-    return ServerCache.fetch(server) {
-      sql(<<~SQL).entries.first
-        select * from servers where id = #{server}
-      SQL
-    }
   end
 
   #######################################
@@ -302,6 +294,14 @@ class RLDB
   end
 
   private
+
+  def server_info(server)
+    return ServerCache.fetch(server) {
+      sql(<<~SQL).entries.first
+        select * from servers where id = #{server}
+      SQL
+    }
+  end
 
   def int_from_playlists(playlist_columns)
     playlist_int = 0
