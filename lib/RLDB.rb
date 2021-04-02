@@ -344,11 +344,9 @@ class RLDB
     }
   end
 
-  def sql(command, catching: [])
+  def sql(command)
     return exec(command)
   rescue PG::Error => e
-    raise e if catching.any? { |error_class| e.is_a?(error_class) }
-
     Discordrb::LOGGER.warn(<<~WARN.chomp)
       SQL command: #{command}
       Exception: <#{e.class}>: #{e.message}
