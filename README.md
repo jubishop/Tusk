@@ -1,5 +1,7 @@
 # ![Image of Tusk](./images/tusk.png)
 
+[![Discord Chat](https://img.shields.io/discord/253308420919263233)](http://discordapp.com/channels/253308420919263233)
+
 **`TuskBot` is a Rocket League Discord Bot focused on tracking player ranks and in-game stats.**
 
 ## Getting Started
