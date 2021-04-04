@@ -45,26 +45,27 @@ GIT
 
 GIT
   remote: https://github.com/jubishop/jubibot.git
-  revision: b1fb4cdd3a2a90eb575a947c62788ef592362ae3
+  revision: 28fa42e81063d46263bc2a5693d7ff49bb8e34f0
   specs:
     jubibot (1.0)
       core
       csv
       discordrb
       rstruct
+      yaml
 
 GIT
   remote: https://github.com/jubishop/rlranks.git
-  revision: 7f47886522d4a0de90ab91d21cf14a96b3f478cc
+  revision: 7016dc0cbc641438dc3f34b1b234d6ff5edf2d23
   specs:
     rlranks (1.0)
       rstruct
 
 GIT
   remote: https://github.com/jubishop/rstruct.git
-  revision: e36189febde42d8b6f87e7b705d830da3d34f2ea
+  revision: a4a59ebcbadc1ab2b4224a62d9e26032354b0199
   specs:
-    rstruct (1.3)
+    rstruct (1.4)
       core
 
 GIT
@@ -133,6 +134,7 @@ GEM
     websocket-client-simple (0.3.0)
       event_emitter
       websocket
+    yaml (0.1.1)
 
 PLATFORMS
   x86_64-darwin-20

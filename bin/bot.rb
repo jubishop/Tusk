@@ -10,7 +10,7 @@ jubi = JubiBot.new(
     token: ENV['DISCORD_TOKEN'],
     command_bot: RLBot.instance,
     prefix: proc { |event| return RLDB.server_prefix(event&.server&.id) },
-    doc_file: File.expand_path('../documentation/commands.json', __dir__),
+    doc_file: File.expand_path('../documentation/commands.yaml', __dir__),
     homepage: 'https://jubishop.com/Tusk/',
     permissions: 470207553,
     error_message: 'Something went wrong.  Would you file an issue at ' \
