@@ -12,6 +12,8 @@
 
 You can choose to add the `Manage Roles` permission at any time and `TuskBot` will go to work adding these roles and assigning them to players upon execution of `!register` or `!ranks`.
 
+Please note: The `Tusk` role needs to be placed above any role it's trying to modify.
+
 ### Rank Roles
 
 If the `Manage Roles` permission is granted: `TuskBot` will create 19 rank roles.  These will be named:
