@@ -23,7 +23,7 @@ GIT
 
 GIT
   remote: https://github.com/jubishop/core.git
-  revision: e20e6d25dc38e01f1c8516adb3c13d14d8c862ba
+  revision: 45a5e073583eb3adb664759e6fddf81b51118882
   specs:
     core (1.14)
 
@@ -38,10 +38,11 @@ GIT
 
 GIT
   remote: https://github.com/jubishop/duration.git
-  revision: 7bb2ed263295a2b70349d14d8ce4e86b21e15336
+  revision: 96c59932a881b2627efe1ab2975e6ee5d58fb7b3
   specs:
-    duration (1.4)
+    duration (1.5)
       core
+      linguistics
 
 GIT
   remote: https://github.com/jubishop/jubibot.git
@@ -113,6 +114,9 @@ GEM
     http-parser (1.2.3)
       ffi-compiler (>= 1.0, < 2.0)
     json (2.5.1)
+    linguistics (2.1.0)
+      loggability (~> 0.11)
+    loggability (0.18.2)
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2021.0225)

@@ -178,7 +178,7 @@ class RLDB
     server_info = server_info(server)
     return '!' unless server_info
 
-    return server_info.fetch(:prefix)
+    return server_info.fetch(:prefix, '!')
   end
 
   def store_server_prefix(server, prefix)
