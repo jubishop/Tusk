@@ -114,16 +114,14 @@ class RLRanks
   # rubocop:enable Lint/SymbolConversion
 
   def self.rltracker(user)
-    base_url = 'https://rocketleague.tracker.network/rocket-league/profile'
+    base_url = 'https://api.tracker.gg/api/v2/rocket-league/standard/profile'
     response = get_response(<<~URI.chomp)
       #{base_url}/#{RLT_PLATFORM_MAP[user.platform]}/#{user.account}
     URI
 
     begin
-      source = response.body.to_s
-      json = source.match(/<script>window.__INITIAL_STATE__=(.+?});/)[1]
-      profiles = JSON.parse(json)['stats-v2']['standardProfiles'].values.first
-      playlists = profiles['segments'].select { |segment|
+      data = JSON.parse(response.body.to_s)['data']
+      playlists = data['segments'].select { |segment|
         segment['type'] == 'playlist'
       }
       rank_list = playlists.map { |playlist|
