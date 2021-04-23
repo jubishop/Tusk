@@ -12,6 +12,7 @@ jubi = JubiBot.new(
     prefix: proc { |event| return RLDB.server_prefix(event&.server&.id) },
     doc_file: File.expand_path('../documentation/commands.yaml', __dir__),
     homepage: 'https://jubishop.com/Tusk/',
+    support_channel: 'https://discord.gg/2YSmnyX',
     permissions: 470207553,
     error_message: 'Something went wrong.  Would you file an issue at ' \
       'https://github.com/jubishop/Tusk/issues or join ' \
@@ -144,6 +145,7 @@ jubi.command(:alltime, num_args: (0..6)) { |event, *names|
 # SIMPLE LINKS
 #######################################
 jubi.command(:invite) { return jubi }
+jubi.command(:support)
 jubi.command(:twitch)
 
 jubi.command(:ballchasing, aliases: [:bc], num_args: (0..1)) { |event, name|

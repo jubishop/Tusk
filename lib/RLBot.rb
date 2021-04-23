@@ -193,6 +193,10 @@ class RLBot
     return jubi.invite
   end
 
+  def support
+    return 'https://discord.gg/2YSmnyX'
+  end
+
   def twitch
     return 'http://twitch.tv/rocketleague'
   end

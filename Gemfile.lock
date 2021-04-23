@@ -46,7 +46,7 @@ GIT
 
 GIT
   remote: https://github.com/jubishop/jubibot.git
-  revision: 375e1919f3e7e1d8240da1c7d9bd89f6b941df58
+  revision: 0ca1afc1a1ae4063dffa17e753a3de48d37d816b
   specs:
     jubibot (1.0)
       core
