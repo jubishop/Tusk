@@ -30,7 +30,7 @@ jubi.command(
     num_args: (3..4),
     owners: 'tusk_admin') { |event, name, account_id, platform, region|
   platform.downcase!
-  region.upcase!
+  region&.upcase!
   platform = platform.to_sym
   RLBot.validate_platform(platform)
   RLBot.validate_region(region) if region
@@ -115,7 +115,7 @@ jubi.command(:register,
              aliases: %i[add signup],
              num_args: (2..3)) { |event, account_id, platform, region|
   platform.downcase!
-  region.upcase!
+  region&.upcase!
   platform = platform.to_sym
   RLBot.validate_platform(platform)
   RLBot.validate_region(region) if region
