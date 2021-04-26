@@ -29,6 +29,8 @@ jubi.command(
     :admin_register,
     num_args: (3..4),
     owners: 'tusk_admin') { |event, name, account_id, platform, region|
+  platform.downcase!
+  region.upcase!
   platform = platform.to_sym
   RLBot.validate_platform(platform)
   RLBot.validate_region(region) if region
