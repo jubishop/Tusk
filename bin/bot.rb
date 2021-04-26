@@ -112,6 +112,8 @@ jubi.command(:uptime)
 jubi.command(:register,
              aliases: %i[add signup],
              num_args: (2..3)) { |event, account_id, platform, region|
+  platform.downcase!
+  region.upcase!
   platform = platform.to_sym
   RLBot.validate_platform(platform)
   RLBot.validate_region(region) if region
