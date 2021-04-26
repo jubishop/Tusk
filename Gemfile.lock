@@ -29,7 +29,7 @@ GIT
 
 GIT
   remote: https://github.com/jubishop/datacache.git
-  revision: fdc8b919fbaa5742f6da1a4bef248db48a3d7217
+  revision: 75b39798994c29278b7c5a77d1c7b9d1602444de
   specs:
     datacache (1.2)
       concurrent-ruby
