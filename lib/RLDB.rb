@@ -8,7 +8,7 @@ require 'duration'
 require 'jubibot'
 require 'rlranks'
 require 'rstruct'
-require 'single_instance'
+require 'single-instance'
 
 class RLDB
   include SingleInstance

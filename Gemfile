@@ -17,6 +17,6 @@ source 'https://www.jubigems.org' do
   gem 'jubibot'
   gem 'rlranks'
   gem 'rstruct'
-  gem 'single_instance'
+  gem 'single-instance'
   gem 'steam'
 end

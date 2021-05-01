@@ -35,7 +35,7 @@ GEM
       rstruct
     rstruct (1.4)
       core
-    single_instance (0.1)
+    single-instance (0.2)
     steam (1.0)
       core
       datacache
@@ -121,7 +121,7 @@ DEPENDENCIES
   pg!
   rlranks!
   rstruct!
-  single_instance!
+  single-instance!
   steam!
 
 RUBY VERSION
