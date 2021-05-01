@@ -23,9 +23,9 @@ GIT
 
 GIT
   remote: https://github.com/jubishop/core.git
-  revision: b3a1101c8a6d3ad07cf6b309413f3e5a48932a77
+  revision: 3b426561e515632dfb95f3b54c07927b99369737
   specs:
-    core (1.16)
+    core (1.17)
 
 GIT
   remote: https://github.com/jubishop/datacache.git
@@ -43,17 +43,6 @@ GIT
     duration (1.5)
       core
       linguistics
-
-GIT
-  remote: https://github.com/jubishop/jubibot.git
-  revision: 0ca1afc1a1ae4063dffa17e753a3de48d37d816b
-  specs:
-    jubibot (1.0)
-      core
-      csv
-      discordrb
-      rstruct
-      yaml
 
 GIT
   remote: https://github.com/jubishop/rlranks.git
@@ -86,7 +75,19 @@ GIT
       http
 
 GEM
-  remote: https://rubygems.org/
+  remote: https://www.jubigems.org/
+  specs:
+    debugger (0.8)
+    jubibot (1.2)
+      core
+      csv
+      debugger
+      discordrb
+      rstruct
+      yaml
+
+GEM
+  remote: https://www.rubygems.org/
   specs:
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
@@ -157,6 +158,7 @@ DEPENDENCIES
   core!
   csv
   datacache!
+  debugger!
   discordrb
   duration!
   http
