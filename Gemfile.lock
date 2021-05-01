@@ -1,6 +1,8 @@
-GIT
-  remote: https://github.com/jubishop/ballchasing.git
-  revision: 15cdbba9d057a593983752ff83b39162696eb733
+GEM
+  specs:
+
+GEM
+  remote: https://www.jubigems.org/
   specs:
     ballchasing (1.0)
       core
@@ -9,75 +11,21 @@ GIT
       http
       json
       rstruct
-
-GIT
-  remote: https://github.com/jubishop/calculated.git
-  revision: 6a8af7df0a575d39f93c0326bae1e89404fc3313
-  specs:
     calculated (1.0)
       core
       datacache
       duration
       http
       rlranks
-
-GIT
-  remote: https://github.com/jubishop/core.git
-  revision: 3b426561e515632dfb95f3b54c07927b99369737
-  specs:
     core (1.17)
-
-GIT
-  remote: https://github.com/jubishop/datacache.git
-  revision: 19827c6d7ac9d726913eff0e10daac1b72270ded
-  specs:
     datacache (1.2)
       concurrent-ruby
       core
       duration
-
-GIT
-  remote: https://github.com/jubishop/duration.git
-  revision: 96c59932a881b2627efe1ab2975e6ee5d58fb7b3
-  specs:
+    debugger (0.8)
     duration (1.5)
       core
       linguistics
-
-GIT
-  remote: https://github.com/jubishop/rlranks.git
-  revision: 7016dc0cbc641438dc3f34b1b234d6ff5edf2d23
-  specs:
-    rlranks (1.0)
-      rstruct
-
-GIT
-  remote: https://github.com/jubishop/rstruct.git
-  revision: a4a59ebcbadc1ab2b4224a62d9e26032354b0199
-  specs:
-    rstruct (1.4)
-      core
-
-GIT
-  remote: https://github.com/jubishop/single_instance.git
-  revision: cf9a865226202e3d9c607b7d9dfad094a452b13d
-  specs:
-    single_instance (0.1)
-
-GIT
-  remote: https://github.com/jubishop/steam.git
-  revision: d9c7f595a83e5f88482c8b5bc60148e95c0b549e
-  specs:
-    steam (1.0)
-      core
-      datacache
-      duration
-      http
-
-GEM
-  remote: https://www.jubigems.org/
-  specs:
-    debugger (0.8)
     jubibot (1.2)
       core
       csv
@@ -85,6 +33,16 @@ GEM
       discordrb
       rstruct
       yaml
+    rlranks (1.0)
+      rstruct
+    rstruct (1.4)
+      core
+    single_instance (0.1)
+    steam (1.0)
+      core
+      datacache
+      duration
+      http
 
 GEM
   remote: https://www.rubygems.org/
@@ -154,16 +112,16 @@ PLATFORMS
 DEPENDENCIES
   ballchasing!
   calculated!
-  concurrent-ruby
+  concurrent-ruby!
   core!
-  csv
+  csv!
   datacache!
   debugger!
-  discordrb
+  discordrb!
   duration!
-  http
+  http!
   jubibot!
-  pg
+  pg!
   rlranks!
   rstruct!
   single_instance!
