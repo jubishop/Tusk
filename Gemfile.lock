@@ -23,13 +23,13 @@ GIT
 
 GIT
   remote: https://github.com/jubishop/core.git
-  revision: 45a5e073583eb3adb664759e6fddf81b51118882
+  revision: b3a1101c8a6d3ad07cf6b309413f3e5a48932a77
   specs:
-    core (1.14)
+    core (1.16)
 
 GIT
   remote: https://github.com/jubishop/datacache.git
-  revision: 75b39798994c29278b7c5a77d1c7b9d1602444de
+  revision: 19827c6d7ac9d726913eff0e10daac1b72270ded
   specs:
     datacache (1.2)
       concurrent-ruby
@@ -68,6 +68,12 @@ GIT
   specs:
     rstruct (1.4)
       core
+
+GIT
+  remote: https://github.com/jubishop/single_instance.git
+  revision: cf9a865226202e3d9c607b7d9dfad094a452b13d
+  specs:
+    single_instance (0.1)
 
 GIT
   remote: https://github.com/jubishop/steam.git
@@ -158,6 +164,7 @@ DEPENDENCIES
   pg
   rlranks!
   rstruct!
+  single_instance!
   steam!
 
 RUBY VERSION

@@ -8,9 +8,10 @@ require 'duration'
 require 'jubibot'
 require 'rlranks'
 require 'rstruct'
+require 'single_instance'
 
 class RLDB
-  include JubiSingleton
+  include SingleInstance
 
   ##### PUBLIC CONSTANTS #####
   PLAYLIST_COLUMNS = %i[
