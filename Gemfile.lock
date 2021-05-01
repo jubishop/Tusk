@@ -22,14 +22,12 @@ GEM
       concurrent-ruby
       core
       duration
-    debugger (0.8)
     duration (1.5)
       core
       linguistics
-    jubibot (1.2)
+    jubibot (1.3)
       core
       csv
-      debugger
       discordrb
       rstruct
       yaml
@@ -116,7 +114,6 @@ DEPENDENCIES
   core!
   csv!
   datacache!
-  debugger!
   discordrb!
   duration!
   http!

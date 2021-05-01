@@ -13,7 +13,6 @@ source 'https://www.jubigems.org' do
   gem 'calculated'
   gem 'core'
   gem 'datacache'
-  gem 'debugger'
   gem 'duration'
   gem 'jubibot'
   gem 'rlranks'
