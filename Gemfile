@@ -1,9 +1,10 @@
 ruby '>= 3'
 
+gem 'discordrb', github: 'shardlab/discordrb'
+
 source 'https://www.rubygems.org' do
   gem 'concurrent-ruby', require: 'concurrent'
   gem 'csv'
-  gem 'discordrb'
   gem 'http'
   gem 'pg'
 end

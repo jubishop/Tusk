@@ -159,6 +159,7 @@ class RLBot
 
     RLRegions.update_nick(member, region)
     RLRoles.update_roles(member, RLRanks.ranks(member, event), platform, region)
+    return
   end
 
   def unregister(member)
@@ -173,6 +174,7 @@ class RLBot
   #######################################
   def ranks(member, event)
     RLRoles.update_roles(member, RLRanks.ranks(member, event))
+    return
   end
 
   #####################################
