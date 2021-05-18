@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/shardlab/discordrb.git
-  revision: 9ecd545d52ec702bc298535e244c3c5aeb30b8d0
+  revision: 359326e8743c6eaa8add263de9edbb6c945ff95d
   specs:
     discordrb (3.4.2)
       discordrb-webhooks (~> 3.4.2)
@@ -24,7 +24,7 @@ GEM
       http
       json
       rstruct
-    calculated (1.0)
+    calculated (1.1)
       core
       datacache
       duration
@@ -38,7 +38,7 @@ GEM
     duration (1.5)
       core
       linguistics
-    jubibot (1.3)
+    jubibot (1.4)
       core
       csv
       discordrb
@@ -49,7 +49,7 @@ GEM
     rstruct (1.4)
       core
     single-instance (0.2)
-    steam (1.0)
+    steam (1.1)
       core
       datacache
       duration
@@ -70,20 +70,21 @@ GEM
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
-    http (4.4.1)
+    http (5.0.0)
       addressable (~> 2.3)
       http-cookie (~> 1.0)
       http-form_data (~> 2.2)
-      http-parser (~> 1.2.0)
+      llhttp-ffi (~> 0.0.1)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     http-form_data (2.3.0)
-    http-parser (1.2.3)
-      ffi-compiler (>= 1.0, < 2.0)
     json (2.5.1)
     linguistics (2.1.0)
       loggability (~> 0.11)
+    llhttp-ffi (0.0.1)
+      ffi-compiler (~> 1.0)
+      rake (~> 13.0)
     loggability (0.18.2)
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
