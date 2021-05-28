@@ -144,7 +144,7 @@ class RLRanks
   # Helper for wrapping HTTP calls.  Throws Error on any failure.
   def self.get_response(url)
     begin
-      response = `curl #{url}`
+      response = `curl '#{url}'`
     rescue StandardError
       raise Error
     end
