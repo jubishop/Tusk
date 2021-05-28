@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/shardlab/discordrb.git
-  revision: 359326e8743c6eaa8add263de9edbb6c945ff95d
+  revision: 79fe7eeba79780164bbc4155cba32e778efc8f99
   specs:
     discordrb (3.4.2)
       discordrb-webhooks (~> 3.4.2)
@@ -66,7 +66,7 @@ GEM
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     event_emitter (0.2.6)
-    ffi (1.15.0)
+    ffi (1.15.1)
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
