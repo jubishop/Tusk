@@ -1,7 +1,6 @@
 require 'core'
 require 'calculated'
 require 'discordrb'
-require 'http'
 require 'json'
 require 'rlranks'
 require 'steam'
@@ -120,7 +119,7 @@ class RLRanks
     URI
 
     begin
-      data = JSON.parse(response.body.to_s)['data']
+      data = JSON.parse(response)['data']
       playlists = data['segments'].select { |segment|
         segment['type'] == 'playlist'
       }
@@ -144,13 +143,7 @@ class RLRanks
 
   # Helper for wrapping HTTP calls.  Throws Error on any failure.
   def self.get_response(url)
-    begin
-      response = HTTP.get(url)
-    rescue HTTP::Error
-      raise Error
-    end
-    raise Error unless response.status.success?
-
+    response = `curl #{url}`
     return response
   end
   private_class_method :get_response
