@@ -1,4 +1,4 @@
-ruby '>= 3'
+ruby '>= 3.0.1'
 
 gem 'discordrb', github: 'shardlab/discordrb'
 
