@@ -13,12 +13,7 @@ class RLPlatformRoles
   ROLE_COLOR = 0xff69b4
   private_constant :ROLE_COLOR
 
-  PLATFORM_ROLES = Set[
-    'steam',
-    'xbox',
-    'ps',
-    'epic',
-  ].freeze
+  PLATFORM_ROLES = Set['steam', 'xbox', 'ps', 'epic',].freeze
   public_constant :PLATFORM_ROLES
   #############################
 

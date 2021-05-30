@@ -286,18 +286,18 @@ class RLSeries
         ENV['BALLCHASING_TOKEN'],
         "TuskBot; server=#{server}")
     return yield(api)
-  rescue Ballchasing::RateLimitError => e
+  rescue Ballchasing::RateLimitError => error
     Discordrb::LOGGER.warn(<<~WARN.chomp)
-      Token: #{e.token}
-      Error: <#{e.class}>: ballchasing.com rate limit hit
+      Token: #{error.token}
+      Error: <#{error.class}>: ballchasing.com rate limit hit
     WARN
     raise JubiBotError,
           'Sorry, Tusk has exceeded the rate limit set by ballchasing.com. ' \
           'If you wait a few seconds you can probably try again.'
-  rescue Ballchasing::ResponseError => e
+  rescue Ballchasing::ResponseError => error
     Discordrb::LOGGER.warn(<<~WARN.chomp)
-      Token: #{e.token}
-      Error: <#{e.class}>: #{e.response}
+      Token: #{error.token}
+      Error: <#{error.class}>: #{error.response}
     WARN
     raise JubiBotError, 'API error of some sort with ballchasing.com'
   end

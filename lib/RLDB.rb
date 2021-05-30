@@ -101,9 +101,12 @@ class RLDB
 
     if user_hash.size < users.length
       users.each { |user|
-        unless user_hash.key?(user.to_i)
-          raise UserIDError.new('**{name}** not found in registry.', user)
-        end
+        next if user_hash.key?(user.to_i)
+
+        raise UserIDError.new(
+            '**{name}** not found in registry. ' \
+            'Type `help register` to learn how to register.',
+            user)
       }
     end
 
@@ -263,10 +266,10 @@ class RLDB
       ps: 'ps',
       epic: 'epic'
     }.freeze
-    valid_player = lambda { |player|
+    valid_player = ->(player) {
       return player.id.id && platform_map.key?(player.id.platform.to_sym)
     }
-    platform = lambda { |player|
+    platform = ->(player) {
       return platform_map.fetch(player.id.platform.to_sym)
     }
 
@@ -347,12 +350,12 @@ class RLDB
 
   def sql(command, catching: [])
     return exec(command)
-  rescue PG::Error => e
-    raise e if catching.any? { |error_class| e.is_a?(error_class) }
+  rescue PG::Error => error
+    raise error if catching.any? { |error_class| error.is_a?(error_class) }
 
     Discordrb::LOGGER.warn(<<~WARN.chomp)
       SQL command: #{command}
-      Exception: <#{e.class}>: #{e.message}
+      Exception: <#{error.class}>: #{error.message}
     WARN
 
     @db.reset

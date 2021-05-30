@@ -210,9 +210,7 @@ class RLBot
   end
 
   def calculated(member)
-    return RLUtils.link(member, {
-      steam: 'https://calculated.gg/players/'
-    })
+    return RLUtils.link(member, { steam: 'https://calculated.gg/players/' })
   end
 
   def steam(member)

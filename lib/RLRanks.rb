@@ -90,12 +90,7 @@ class RLRanks
   end
   private_class_method :fetch_ranks
 
-  RLT_PLATFORM_MAP = {
-    steam: :steam,
-    xbox: :xbl,
-    ps: :psn,
-    epic: :epic
-  }.freeze
+  RLT_PLATFORM_MAP = { steam: :steam, xbox: :xbl, ps: :psn, epic: :epic }.freeze
   private_constant :RLT_PLATFORM_MAP
 
   # rubocop:disable Lint/SymbolConversion
