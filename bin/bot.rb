@@ -115,6 +115,7 @@ jubi.command(:register,
              aliases: %i[add signup],
              num_args: (2..3)) { |event, account_id, platform, region|
   platform.downcase!
+  platform = 'ps' if platform === 'ps4'
   region&.upcase!
   platform = platform.to_sym
   RLBot.validate_platform(platform)
