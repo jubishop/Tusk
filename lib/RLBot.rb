@@ -153,7 +153,6 @@ class RLBot
     end
     return "Couldn't find **#{orig_account}** on *#{platform}*." unless account
 
-    platform = :ps if platform.start_with?('ps')
     RLDB.register(member.id, member.server.id, account, platform)
     event.channel.send_message(
         "**#{member.display_name}** successfully registered.")
