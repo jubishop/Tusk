@@ -1,5 +1,6 @@
 require 'core'
 require 'singleton'
+require 'steam'
 
 require_relative 'RLDB'
 require_relative 'RLRanks'
@@ -141,7 +142,14 @@ class RLBot
   #######################################
   def register(member, account, platform, region, event)
     event.channel.send_message("Now registering: **#{member.display_name}**...")
-    return "Couldn't find **#{orig_account}** on *#{platform}*." unless account
+    if platform == :steam
+      begin
+        resolved_account = Steam::API.new.resolve_vanity_url(account)
+        account = resolved_account if resolved_account
+      rescue StandardError
+        # Fuck it then
+      end
+    end
 
     RLDB.register(member.id, member.server.id, account, platform)
     event.channel.send_message(

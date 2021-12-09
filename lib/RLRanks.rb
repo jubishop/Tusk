@@ -51,6 +51,14 @@ class RLRanks
       embed.footer = Discordrb::Webhooks::EmbedFooter.new(
           text: best_rank.playlist,
           icon_url: RLUtils.rank_url(best_rank))
+
+      if db_user.platform == :steam
+        player_summary = Steam::API.new.player_summary(db_user.account)
+        embed.author = Discordrb::Webhooks::EmbedAuthor.new(
+            name: player_summary[:personaname],
+            url: player_summary[:profileurl],
+            icon_url: player_summary[:avatarfull])
+      end
     }
 
     return ranks
