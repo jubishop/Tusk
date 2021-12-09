@@ -15,8 +15,8 @@ jubi = JubiBot.new(
     support_channel: 'https://discord.gg/2YSmnyX',
     permissions: 470207553,
     error_message: 'Something went wrong.  Would you file an issue at ' \
-      'https://github.com/jubishop/Tusk/issues or join ' \
-      'https://discord.gg/2YSmnyX and tell `jubi` about it?')
+                   'https://github.com/jubishop/Tusk/issues or join ' \
+                   'https://discord.gg/2YSmnyX and tell `jubi` about it?')
 
 #######################################
 # MANAGEMENT
@@ -155,10 +155,6 @@ jubi.command(:support)
 jubi.command(:twitch)
 
 jubi.command(:ballchasing, aliases: [:bc], num_args: (0..1)) { |event, name|
-  return jubi.member(event, name)
-}
-
-jubi.command(:calculated, aliases: [:gg], num_args: (0..1)) { |event, name|
   return jubi.member(event, name)
 }
 

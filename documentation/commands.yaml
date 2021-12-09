@@ -35,9 +35,6 @@ twitch:
 ballchasing:
   description: Print link to user's ballchasing profile.
   usage: "[user]"
-calculated:
-  description: Print link to user's calculated.gg profile.
-  usage: "[user]"
 steam:
   description: Print link to user's steam profile.
   usage: "[user]"

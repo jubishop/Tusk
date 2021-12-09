@@ -63,7 +63,7 @@ class RLUtils
     db_user = RLDB.user(member.id, member.server.id)
     unless urls.key?(db_user.platform)
       raise JubiBotError, "**#{member.display_name}**'s platform:" \
-        " **#{db_user.platform}** does not support this link."
+                          " **#{db_user.platform}** does not support this link."
     end
 
     return escape(urls.fetch(db_user.platform) + db_user.account)

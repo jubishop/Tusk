@@ -127,7 +127,7 @@ class RLSeries
     end
 
     channel.send_message("Found #{summaries.length} games with #{names} in " \
-      "the last #{duration.hours.to_i} hours.")
+                         "the last #{duration.hours.to_i} hours.")
 
     db_replays, api_replays = fetch_replays(channel,
                                             summaries,

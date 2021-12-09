@@ -1,4 +1,3 @@
-require 'calculated'
 require 'core'
 require 'singleton'
 
@@ -140,17 +139,8 @@ class RLBot
   #######################################
   # USER REGISTRATION MANAGEMENT
   #######################################
-  def register(member, orig_account, platform, region, event)
+  def register(member, account, platform, region, event)
     event.channel.send_message("Now registering: **#{member.display_name}**...")
-    begin
-      account = if platform == :steam
-                  Calculated::API.player(orig_account)
-                else
-                  orig_account
-                end
-    rescue Calculated::Error
-      # Dealt with below when `account` is undefined.
-    end
     return "Couldn't find **#{orig_account}** on *#{platform}*." unless account
 
     RLDB.register(member.id, member.server.id, account, platform)
@@ -207,10 +197,6 @@ class RLBot
     return RLUtils.link(member, {
       steam: 'http://ballchasing.com/player/steam/'
     })
-  end
-
-  def calculated(member)
-    return RLUtils.link(member, { steam: 'https://calculated.gg/players/' })
   end
 
   def steam(member)

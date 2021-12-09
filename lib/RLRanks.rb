@@ -1,5 +1,4 @@
 require 'core'
-require 'calculated'
 require 'discordrb'
 require 'json'
 require 'rlranks'
@@ -52,14 +51,6 @@ class RLRanks
       embed.footer = Discordrb::Webhooks::EmbedFooter.new(
           text: best_rank.playlist,
           icon_url: RLUtils.rank_url(best_rank))
-
-      if db_user.platform == :steam
-        player_summary = Steam::API.new.player_summary(db_user.account)
-        embed.author = Discordrb::Webhooks::EmbedAuthor.new(
-            name: player_summary[:personaname],
-            url: player_summary[:profileurl],
-            icon_url: player_summary[:avatarfull])
-      end
     }
 
     return ranks
@@ -73,15 +64,13 @@ class RLRanks
   # Returns false if no ranks could be found
   def self.fetch_ranks(user)
     methods = {
-      Calculated: -> { Calculated::API.ranks(user.id, user.account) },
       RLTracker: -> { rltracker(user) },
       RLDB: -> { RLDB.ranks(user.id, user.account, user.platform) }
     }
-    methods.delete(:Calculated) unless user.platform == :steam
     methods.each_pair { |name, job|
       begin
         response = job.run
-      rescue Error, Calculated::Error
+      rescue Error
         Discordrb::LOGGER.warn("#{name} failed for #{user}")
       end
       return response if response

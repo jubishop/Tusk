@@ -249,7 +249,7 @@ Note: The maximum command prefix length is 8 characters.
 
 ## URL Commands
 
-Use the `!help` command to learn about simple commands to get URLs to specific player pages on [ballchasing.com](http://ballchasing.com), [calculated.gg](http://calculated.gg), [rocketleague.tracker.network](http://rocketleague.tracker.network), etc.
+Use the `!help` command to learn about simple commands to get URLs to specific player pages on [ballchasing.com](http://ballchasing.com), [rocketleague.tracker.network](http://rocketleague.tracker.network), etc.
 
 ## Try it out before installing
 
