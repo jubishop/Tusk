@@ -1,4 +1,4 @@
-ruby '>= 3.0.1'
+ruby '>= 3.0.2'
 source 'https://rubygems.org'
 
 gem 'concurrent-ruby', require: 'concurrent'
