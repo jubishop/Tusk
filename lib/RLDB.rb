@@ -45,14 +45,10 @@ class RLDB
   ##########################
 
   def initialize
-    if !ENV.key?('DATABASE_URL') && !ENV.key?('DISCORD_DB')
-      raise ArgumentError, 'ENV DATABASE_URL or DISCORD_DB must be set'
-    end
-
     @db = if ENV.key?('DATABASE_URL')
             PG.connect(ENV['DATABASE_URL'])
           else
-            PG.connect(dbname: ENV['DISCORD_DB'])
+            PG.connect(dbname: 'rlbot')
           end
   end
 
