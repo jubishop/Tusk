@@ -116,7 +116,13 @@ class RLRanks
         segment['type'] == 'playlist'
       }
       rank_list = playlists.map { |playlist|
-        [playlist['metadata']['name'], playlist['stats']['tier']['value']]
+        [
+          playlist['metadata']['name'],
+          {
+            rank: playlist['stats']['tier']['value'],
+            mmr: playlist['stats']['rating']['value']
+          }
+        ]
       }.to_h
     rescue StandardError
       raise Error
@@ -125,8 +131,11 @@ class RLRanks
     raise Error if rank_list.empty?
 
     ranks = {}
-    rank_list.each { |playlist, rank|
-      ranks[RLT_RANK_MAP.fetch(playlist.to_sym)] = rank - 1 if rank.positive?
+    rank_list.each { |playlist, rank_info|
+      if rank_info[:rank].positive?
+        rank_info[:rank] -= 1
+        ranks[RLT_RANK_MAP.fetch(playlist.to_sym)] = rank_info.values
+      end
     }
 
     return RLRanks.new(user.id, user.account, user.platform, **ranks)
