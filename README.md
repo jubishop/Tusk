@@ -157,8 +157,7 @@ Server owners (or users with the role `tusk_admin`) can also update the rank rol
 ![Image of Ranks](./images/ranks.png)
 
 - To get your own ranks, simply type `!ranks`
-- To get the ranks of another registered player, follow the command with the name, nickname, or @mention of another discord member.
-  - ***Example***: `!ranks jubi`
+- To get the ranks of another registered player, follow the command with the @mention of another discord member.
   - ***Example***: `!ranks @jubi`
 - Every time a rank is checked, the role of that player will be updated to their current highest rank.  (If the `Manage Roles` permission has been granted)
 

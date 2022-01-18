@@ -3,8 +3,7 @@ source 'https://rubygems.org'
 
 gem 'concurrent-ruby', require: 'concurrent'
 gem 'csv'
-gem 'discordrb', github: 'shardlab/discordrb',
-                 ref: 'f9a94c96a82f00cc21a82151d08b6c2278f6f159'
+gem 'discordrb', github: 'shardlab/discordrb'
 gem 'http'
 gem 'pg'
 

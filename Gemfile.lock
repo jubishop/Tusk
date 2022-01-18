@@ -1,7 +1,6 @@
 GIT
   remote: https://github.com/shardlab/discordrb.git
-  revision: f9a94c96a82f00cc21a82151d08b6c2278f6f159
-  ref: f9a94c96a82f00cc21a82151d08b6c2278f6f159
+  revision: 3f0a06eae325b4d7b24c25f71468b02b6cb47c93
   specs:
     discordrb (3.4.2)
       discordrb-webhooks (~> 3.4.2)
@@ -76,7 +75,7 @@ GEM
       http
       json
       rstruct
-    core (1.17)
+    core (1.18)
     datacache (1.2)
       concurrent-ruby
       core
@@ -84,7 +83,7 @@ GEM
     duration (1.6)
       core
       linguistics
-    jubibot (1.4)
+    jubibot (1.9)
       core
       csv
       discordrb
