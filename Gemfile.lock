@@ -48,7 +48,7 @@ GEM
     netrc (0.11.0)
     opus-ruby (1.0.1)
       ffi
-    pg (1.2.3)
+    pg (1.3.0)
     public_suffix (4.0.6)
     rake (13.0.6)
     rest-client (2.1.0)
@@ -80,7 +80,7 @@ GEM
       concurrent-ruby
       core
       duration
-    duration (1.6)
+    duration (1.7)
       core
       linguistics
     jubibot (1.9)

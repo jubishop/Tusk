@@ -25,8 +25,10 @@ class RLPlatformRoles
   end
 
   def self.all_roles(server)
-    roles = server.roles.select { |role| PLATFORM_ROLES.include?(role.name) }
-    all_roles = roles.to_h { |role| [role.name, role] }
+    roles = server.roles.select { |role|
+      PLATFORM_ROLES.include?(role.name.downcase)
+    }
+    all_roles = roles.to_h { |role| [role.name.downcase, role] }
     create_missing_roles(server, all_roles)
     return all_roles
   end

@@ -53,8 +53,10 @@ class RLRegions
   end
 
   def self.all_roles(server)
-    roles = server.roles.select { |role| REGION_ROLES.include?(role.name) }
-    all_roles = roles.to_h { |role| [role.name, role] }
+    roles = server.roles.select { |role|
+      REGION_ROLES.include?(role.name.upcase)
+    }
+    all_roles = roles.to_h { |role| [role.name.upcase, role] }
     create_missing_roles(server, all_roles)
     return all_roles
   end
