@@ -115,7 +115,7 @@ class RLRanks
       playlists = data['segments'].select { |segment|
         segment['type'] == 'playlist'
       }
-      rank_list = playlists.map { |playlist|
+      rank_list = playlists.to_h { |playlist|
         [
           playlist['metadata']['name'],
           {
@@ -123,7 +123,7 @@ class RLRanks
             mmr: playlist['stats']['rating']['value']
           }
         ]
-      }.to_h
+      }
     rescue StandardError
       raise Error
     end

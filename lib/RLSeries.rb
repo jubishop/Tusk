@@ -162,9 +162,9 @@ class RLSeries
   # RESPONSE MARKUP
   #####################################
   def self.replay_messages(members, db_users, replays)
-    player_stats = db_users.map { |db_user|
+    player_stats = db_users.to_h { |db_user|
       [db_user.id, PlayerStats.new(db_user, replays.values)]
-    }.to_h
+    }
     return SERIES_MAP.map { |group, attributes|
       <<~MESSAGE.strip
         **#{group}**
