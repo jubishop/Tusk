@@ -145,7 +145,7 @@ class RLRanks
   # Helper for wrapping HTTP calls.  Throws Error on any failure.
   def self.get_response(url)
     begin
-      response = `curl '#{url}'`
+      response = `curl '#{url}' -X 'GET' -H 'Accept: application/json, text/plain, */*' -H 'Origin: https://rocketleague.tracker.network' -H 'Host: api.tracker.gg' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.2 Safari/605.1.15' -H 'Accept-Language: en' -H 'Referer: https://rocketleague.tracker.network/' -H 'Connection: keep-alive'`
     rescue StandardError
       raise Error
     end
